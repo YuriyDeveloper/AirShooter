@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-public class GameStateMachine 
+public class GameStateMachine : IStateMachine
 {
     private Dictionary<Type, IState> _states;
     private IState _activeState;
