@@ -1,7 +1,12 @@
-
 using UnityEngine;
 
-public class StartGame : MonoBehaviour
+public class StartGame
 {
-   
+    private GameStateMachine _gameStateMachine;
+
+    public StartGame()
+    {
+        _gameStateMachine = new GameStateMachine();
+        _gameStateMachine.Enter<GameInitialState>();
+    }
 }

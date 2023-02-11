@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class GameInitialState : MonoBehaviour
+public class GameInitialState : IState
 {
-    // Start is called before the first frame update
-    void Start()
+
+  
+    public void Enter()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Exit()
     {
-        
+        throw new System.NotImplementedException();
     }
 }
