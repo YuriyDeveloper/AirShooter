@@ -11,13 +11,14 @@ public class GameStateMachine
     {
         _states = new Dictionary<Type, IState>()
         {
-            [typeof(GameInitialState)] = new GameInitialState(),
-            [typeof(LoadSceneState)] = new LoadSceneState(),
+            [typeof(GameInitialState)] = new GameInitialState(this),
+            [typeof(LoadSceneState)] = new LoadSceneState(this),
         };
     }
 
     public void Enter<TState>() where TState : class, IState
     {
+       
         IState state = ChangeState<TState>();
         state.Enter();
     }
