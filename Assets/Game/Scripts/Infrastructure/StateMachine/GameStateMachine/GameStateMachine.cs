@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-public class GameStateMachine : IStateMachine
+public class GameStateMachine : IGameStateMachine
 {
     private Dictionary<Type, IExitableState> _states;
     private IExitableState _activeState;
@@ -12,7 +12,7 @@ public class GameStateMachine : IStateMachine
         _states = new Dictionary<Type, IExitableState>()
         {
             [typeof(GameInitialState)] = new GameInitialState(this),
-            [typeof(LoadSceneState)] = new LoadSceneState(this),
+            [typeof(LoadSceneState)] = new LoadSceneState(this)
         };
     }
 

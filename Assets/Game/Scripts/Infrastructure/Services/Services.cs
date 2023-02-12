@@ -6,7 +6,12 @@ public class Services
     private static Dictionary<string, IService> _allServices;
     public Dictionary<string, IService> AllServices { get { return _allServices; } }
 
-    public static void Register(string serviceName, IService service)
+    public Services()
+    {
+        _allServices = new Dictionary<string, IService>();
+    }
+
+    public void Register(string serviceName, IService service)
     {
         if (_allServices.TryGetValue(serviceName, out service))
         {
@@ -18,7 +23,7 @@ public class Services
         }
         
     }
-    public static IService GetService(string serviceName)
+    public IService GetService(string serviceName)
     {
         if (_allServices.TryGetValue(serviceName, out IService service))
         {

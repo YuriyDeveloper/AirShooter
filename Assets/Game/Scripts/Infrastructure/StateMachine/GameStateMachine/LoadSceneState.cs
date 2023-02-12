@@ -3,7 +3,6 @@ public class LoadSceneState : IPayloadedState<string>
 {
     private GameStateMachine _gameStateMachine;
     private SceneLoader _sceneLoader;
-    private readonly string _sceneName;
     public LoadSceneState(GameStateMachine gameStateMachine)
     {
         _sceneLoader = new SceneLoader();

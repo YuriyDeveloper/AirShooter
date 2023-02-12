@@ -1,6 +1,6 @@
 
 
-public interface IFactory
+public interface IFactory : IService
 {
 
 }

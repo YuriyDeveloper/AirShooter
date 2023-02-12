@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BulletFactory : IService
+public class BulletFactory : IBulletFactory
 {
     public void CreateSimpleBullet()
     {
-
+        UnityEngine.Debug.Log("CreatingSimpleBullet");
     }
 
     public void CreateMiddleBullet()
