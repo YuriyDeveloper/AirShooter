@@ -19,12 +19,12 @@ public class GameInitialState : IState
 
     public void RegisterServices()
     {
-        Debug.Log("3");
         _services = new Services();
         _services.RegisterSingle(_gameStateMachine);
-        _services.RegisterSingle(new BulletFactory());
-        _services.RegisterSingle(new EnemyFactory());
-        _services.RegisterSingle(new UIFactory());
+        _services.RegisterSingle<IBulletFactory>(new BulletFactory());
+        _services.RegisterSingle<IEnemyFactory>(new EnemyFactory());
+        _services.RegisterSingle<IUIFactory>(new UIFactory());
+        _services.RegisterSingle<IAssetProvider>(new AssetProvider());
     }
 
     public void Exit()

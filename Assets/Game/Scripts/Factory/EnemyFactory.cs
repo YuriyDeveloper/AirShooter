@@ -1,6 +1,6 @@
 
 
-public class EnemyFactory : IFactory
+public class EnemyFactory : IEnemyFactory
 {
     private void CreateSimpleEnemy()
     {

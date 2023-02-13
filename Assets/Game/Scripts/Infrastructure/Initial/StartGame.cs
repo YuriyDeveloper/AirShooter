@@ -6,7 +6,6 @@ public class StartGame
 
     public StartGame()
     {
-        Debug.Log("1");
         _gameStateMachine = new GameStateMachine();
         _gameStateMachine.Enter<GameInitialState>();
     }
