@@ -1,38 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Services 
+public class Services
 {
-    private static Dictionary<string, IService> _allServices;
-    public Dictionary<string, IService> AllServices { get { return _allServices; } }
+    private static Services _instance;
+    public static Services Container => _instance ?? (_instance = new Services());
 
-    public Services()
-    {
-        _allServices = new Dictionary<string, IService>();
-    }
+    public void RegisterSingle<TService>(TService implementation) where TService : IService =>
+      Implementation<TService>.ServiceInstance = implementation;
 
-    public void Register(string serviceName, IService service)
+    public TService Single<TService>() where TService : IService =>
+      Implementation<TService>.ServiceInstance;
+
+    private class Implementation<TService> where TService : IService
     {
-        if (_allServices.TryGetValue(serviceName, out service))
-        {
-            return;
-        }
-        else
-        {
-            _allServices.Add(serviceName, service);
-        }
-        
-    }
-    public IService GetService(string serviceName)
-    {
-        if (_allServices.TryGetValue(serviceName, out IService service))
-        {
-            return _allServices[serviceName];
-        }
-        else
-        {
-            Debug.Log("this service is not registered");
-            return null;
-        }
+        public static TService ServiceInstance;
     }
 }

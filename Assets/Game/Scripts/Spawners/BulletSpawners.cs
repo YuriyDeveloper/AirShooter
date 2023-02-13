@@ -10,7 +10,6 @@ public class BulletSpawners : MonoBehaviour
 
     private void Awake()
     {
-        _bulletFactory = (IBulletFactory)_services.AllServices[ServicesKey._bulletFactory];
     }
     private void FixedUpdate()
     {

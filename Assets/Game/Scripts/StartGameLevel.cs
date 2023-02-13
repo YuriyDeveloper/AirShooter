@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class StartGameLevel : MonoBehaviour
 {
-    private Services _services;
     private IGameStateMachine _gameStateMachine;
-
-    private void Start()
+    public void StartLevel()
     {
-        _gameStateMachine = (IGameStateMachine)_services.AllServices[ServicesKey._gameStateMachine];
+        _gameStateMachine = Services.Container.Single<IGameStateMachine>();
         _gameStateMachine.Enter<LoadSceneState, string>(ScenePath.oneGameLevelScene);
     }
 }

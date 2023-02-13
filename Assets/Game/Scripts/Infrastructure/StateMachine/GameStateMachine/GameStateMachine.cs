@@ -1,5 +1,5 @@
 
-
+using UnityEngine;
 using System;
 using System.Collections.Generic;
 
@@ -9,6 +9,7 @@ public class GameStateMachine : IGameStateMachine
     private IExitableState _activeState;
     public GameStateMachine()
     {
+        Debug.Log("2");
         _states = new Dictionary<Type, IExitableState>()
         {
             [typeof(GameInitialState)] = new GameInitialState(this),

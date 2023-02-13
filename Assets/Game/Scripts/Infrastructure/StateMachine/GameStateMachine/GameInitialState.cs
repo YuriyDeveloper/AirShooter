@@ -1,10 +1,12 @@
+using UnityEngine;
+
 public class GameInitialState : IState
 {
     private Services _services;
 
-    private GameStateMachine _gameStateMachine;
+    private IGameStateMachine _gameStateMachine;
 
-    public GameInitialState(GameStateMachine gameStateMachine)
+    public GameInitialState(IGameStateMachine gameStateMachine)
     {
         _gameStateMachine = gameStateMachine;
         RegisterServices();
@@ -12,16 +14,17 @@ public class GameInitialState : IState
   
     public void Enter()
     {
-        _gameStateMachine.Enter<LoadSceneState, string>(ScenePath.downloadScene);
+        _gameStateMachine.Enter<LoadSceneState, string>(ScenePath.mainMenuScene);
     }
 
     public void RegisterServices()
     {
+        Debug.Log("3");
         _services = new Services();
-        _services.Register(ServicesKey._gameStateMachine, new GameStateMachine());
-        _services.Register(ServicesKey._bulletFactory, new BulletFactory());
-        _services.Register(ServicesKey._enemyFactory, new EnemyFactory());
-        _services.Register(ServicesKey._uiFactory, new UIFactory());
+        _services.RegisterSingle(_gameStateMachine);
+        _services.RegisterSingle(new BulletFactory());
+        _services.RegisterSingle(new EnemyFactory());
+        _services.RegisterSingle(new UIFactory());
     }
 
     public void Exit()
@@ -29,12 +32,4 @@ public class GameInitialState : IState
 
     }
   
-}
-public static class ServicesKey
-{
-    public const string _gameStateMachine = "gameStateMachine";
-    public const string _bulletFactory = "bulletFactory";
-    public const string _enemyFactory = "enemyFactory";
-    public const string _uiFactory = "uiFactory";
-
 }
