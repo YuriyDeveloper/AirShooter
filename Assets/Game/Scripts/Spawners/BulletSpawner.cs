@@ -1,39 +1,46 @@
-
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class BulletSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _spawnPoint;
+    [SerializeField] private bool autoExpand = false;
+    [SerializeField] private Transform _spawnPointOne;
+    [SerializeField] private Transform _spawnPointTwo;
+
     private IBulletFactory _bulletFactory;
-    private IObjectPool<SimpleBullet> _bulletPool;
-    private IAssetProvider _assetProvider;
-    private void Awake()
+    [SerializeField] private SimpleBullet _simpleBullet;
+
+    private Pool<SimpleBullet> _poolOne;
+    private Pool<SimpleBullet> _poolTwo;
+
+    private void Start()
     {
+
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _bulletPool = new ObjectPool<SimpleBullet>(CreateBullet);
-        _assetProvider = Services.Container.Single<IAssetProvider>();
-    }
-    private void FixedUpdate()
-    {
-        Spawn();
+        _poolOne = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 0, _spawnPointOne);
+        _poolTwo = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 0, _spawnPointTwo);
+        _poolOne.autoExpand = autoExpand;
+        _poolTwo.autoExpand = autoExpand;
+
+        StartCoroutine(CreateBullet());
     }
 
-    private SimpleBullet CreateBullet()
+    private void Update()
     {
-        SimpleBullet bullet = Instantiate(_assetProvider.Load("Prefabs/Weapons/SimpleBullet"));
-        return bullet;
+       
     }
 
-    private void Spawn()
+    private IEnumerator CreateBullet()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            _bulletFactory.CreateSimpleBullet();
+        while (gameObject.activeSelf)
+        { 
+            var bulletOne = this._poolOne.GetFreeElement();
+            var bulletTwo = this._poolTwo.GetFreeElement();
+            bulletOne.transform.parent = null;
+            bulletTwo.transform.parent = null;
+            yield return new WaitForSeconds(0.2f);
         }
-           
-
        
     }
 }

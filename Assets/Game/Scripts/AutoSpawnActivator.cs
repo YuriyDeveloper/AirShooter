@@ -1,11 +1,11 @@
+using System;
 using UnityEngine;
 
 public class AutoSpawnActivator : MonoBehaviour
 {
-    private bool _activated;
+    public static bool activation = false;
     public void Activator()
     {
-        _activated = true;
-
+       activation = true;
     }
 }

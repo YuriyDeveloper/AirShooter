@@ -463,9 +463,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669689903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.77, z: 0}
-  m_LocalScale: {x: 21.377327, y: 31.37314, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalScale: {x: 12, y: 20.43107, z: 0.00906642}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -523,7 +523,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15.210327
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -547,9 +547,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725128278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 16, z: -10}
+  m_LocalPosition: {x: 0, y: -10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -561,6 +561,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 335368527}
     m_Modifications:
+    - target: {fileID: 1442550300820155342, guid: 187eb50a1e2d5524d967f21f2a85254f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442550300820155342, guid: 187eb50a1e2d5524d967f21f2a85254f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Activator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442550300820155342, guid: 187eb50a1e2d5524d967f21f2a85254f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AutoSpawnActivator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442550300820155342, guid: 187eb50a1e2d5524d967f21f2a85254f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2583243122727866957, guid: 187eb50a1e2d5524d967f21f2a85254f, type: 3}
       propertyPath: m_Name
       value: PlayUI
@@ -618,6 +634,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -309461867494017576, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
+      propertyPath: _usePool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -309461867494017576, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 5146885218707615115, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
     - target: {fileID: 5918384500739287896, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
       propertyPath: m_Name
       value: PlayerPlane
@@ -632,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5918384500739287899, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.65
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 5918384500739287899, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
       propertyPath: m_LocalPosition.z

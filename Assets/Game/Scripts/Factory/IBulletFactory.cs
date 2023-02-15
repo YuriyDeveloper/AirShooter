@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IBulletFactory : IService
 {
-    public void CreateSimpleBullet();
+    public SimpleBullet CreateSimpleBullet();
 }

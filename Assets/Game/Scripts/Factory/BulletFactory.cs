@@ -1,8 +1,12 @@
+
+using UnityEngine;
+
 public class BulletFactory : IBulletFactory
 {
-    public void CreateSimpleBullet()
+    public SimpleBullet CreateSimpleBullet()
     {
-        UnityEngine.Debug.Log("CreatingSimpleBullet");
+        SimpleBullet bullet = Resources.Load("Prefabs/Weapons/SimpleBullet", typeof(SimpleBullet)) as SimpleBullet;
+        return bullet;
     }
 
     public void CreateMiddleBullet()
