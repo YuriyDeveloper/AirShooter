@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247523667905824091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0.472, y: 0.292, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217183020159026445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17, y: 0.29, z: 0}
+  m_LocalPosition: {x: -0.474, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eae028bb81d76f8418adf241f7c71b24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 809b49853c386504dac40a39cea5b04e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,6 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoExpand: 1
-  _spawnPointOne: {fileID: 3614006259903991816}
-  _spawnPointTwo: {fileID: 6394509433615086813}
-  _simpleBullet: {fileID: 5146885218707615115, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  _spawnPoints:
+  - {fileID: 3614006259903991816}
+  - {fileID: 6394509433615086813}

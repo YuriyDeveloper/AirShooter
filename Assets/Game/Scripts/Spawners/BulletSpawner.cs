@@ -5,41 +5,30 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private bool autoExpand = false;
-    [SerializeField] private Transform _spawnPointOne;
-    [SerializeField] private Transform _spawnPointTwo;
-
+    [SerializeField] private List<Transform> _spawnPoints;
     private IBulletFactory _bulletFactory;
-    [SerializeField] private SimpleBullet _simpleBullet;
 
     private Pool<SimpleBullet> _poolOne;
-    private Pool<SimpleBullet> _poolTwo;
 
     private void Start()
     {
-
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _poolOne = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 0, _spawnPointOne);
-        _poolTwo = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 0, _spawnPointTwo);
+        _poolOne = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 50);
         _poolOne.autoExpand = autoExpand;
-        _poolTwo.autoExpand = autoExpand;
-
         StartCoroutine(CreateBullet());
-    }
-
-    private void Update()
-    {
-       
+        StopCoroutine(CreateBullet());
     }
 
     private IEnumerator CreateBullet()
     {
         while (gameObject.activeSelf)
         { 
-            var bulletOne = this._poolOne.GetFreeElement();
-            var bulletTwo = this._poolTwo.GetFreeElement();
-            bulletOne.transform.parent = null;
-            bulletTwo.transform.parent = null;
-            yield return new WaitForSeconds(0.2f);
+            foreach (Transform point in _spawnPoints)
+            {
+                IBullet bulletOne = _poolOne.GetFreeElement(point.transform.position);
+              
+            }
+             yield return new WaitForSeconds(0.1f);
         }
        
     }

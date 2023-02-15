@@ -11,60 +11,61 @@ public class Pool<T> where T : MonoBehaviour
     public Pool(T prefab, int count)
     {
         this.prefab = prefab;
-        this.container = null;
-        this.CreatePool(count);
+        container = null;
+        CreatePool(count);
     }
 
     public Pool(T prefab, int count, Transform container)
     {
         this.prefab = prefab;
         this.container = container;
-        this.CreatePool(count);
+        CreatePool(count);
     }
 
     private void CreatePool(int count)
     {
-        this.pool = new List<T>();
+        pool = new List<T>();
 
         for (int i = 0; i < count; i++)
         {
-            this.CreateObject();
+            CreateObject();
         }
     }
 
     private T CreateObject(bool isActiveByDefault = false)
     {
-        var createdObject = Object.Instantiate(this.prefab, this.container);
+        var createdObject = Object.Instantiate(prefab, container);
         createdObject.gameObject.SetActive(isActiveByDefault);
-        this.pool.Add(createdObject);
+        pool.Add(createdObject);
         return createdObject;
     }
 
-    public bool HasFreeElement(out T element)
+    public bool HasFreeElement(out T element, Vector3 spawnPoint)
     {
         foreach (var mono in pool)
         {
             if (!mono.gameObject.activeInHierarchy)
             {
-                element= mono;
+                element = mono;
                 mono.gameObject.SetActive(true);
+                mono.gameObject.transform.position = spawnPoint;
                 return true;
             }
         }
-        element= null;
+        element = null;
         return false;
     }
 
-    public T GetFreeElement()
+    public T GetFreeElement(Vector3 spawnPoint)
     {
-        if (this.HasFreeElement(out var element))
+        if (HasFreeElement(out var element, spawnPoint))
         {
             return element;
 
         }
-        if (this.autoExpand)
+        if (autoExpand)
         {
-            return this.CreateObject(true);
+            return CreateObject(true);
         }
         throw new System.Exception("error pool");
     }
