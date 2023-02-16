@@ -6,6 +6,6 @@ public class StartGameLevel : MonoBehaviour
     public void StartLevel()
     {
         _gameStateMachine = Services.Container.Single<IGameStateMachine>();
-        _gameStateMachine.Enter<LoadSceneState, string>(ScenePath.oneGameLevelScene);
+        _gameStateMachine.Enter<LoadSceneState, string>(ScenePath.GameLevelScene1);
     }
 }
