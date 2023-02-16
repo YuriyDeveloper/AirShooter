@@ -582,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPlane
       objectReference: {fileID: 0}
+    - target: {fileID: 2244286065462831405, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
 --- !u!1001 &1016667367
@@ -638,6 +642,10 @@ PrefabInstance:
     - target: {fileID: 2244286065462831405, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
       propertyPath: m_Name
       value: EnemyPlane (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244286065462831405, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
@@ -816,6 +824,10 @@ PrefabInstance:
     - target: {fileID: 5918384500739287896, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
       propertyPath: m_Name
       value: PlayerPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918384500739287896, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5918384500739287899, guid: 3cb0e1b95f72f794aba433ed26c05ed2, type: 3}
       propertyPath: m_RootOrder

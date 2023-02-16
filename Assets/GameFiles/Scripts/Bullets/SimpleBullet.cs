@@ -7,16 +7,20 @@ public class SimpleBullet : MonoBehaviour, IBullet
     [SerializeField] private int _speed;
     private Rigidbody2D _rigidbody;
     private Vector2 _startPoint;
+    public float _timer;
     public int Direction { get; set; }
 
     private void OnEnable()
-    { 
+    {
+        _timer = 0;
         _startPoint = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
+        _timer += Time.deltaTime;
+        Debug.Log("timer " + _timer);
         Flying();
         SelfDestruction();
     }
@@ -29,9 +33,9 @@ public class SimpleBullet : MonoBehaviour, IBullet
     private void SelfDestruction()
     {
 
-        if (Vector2.Distance(_startPoint, transform.position) > 15)
+        if (_timer > 2)
         {
-             gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 

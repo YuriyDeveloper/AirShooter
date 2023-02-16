@@ -18,7 +18,6 @@ public class BulletSpawner : MonoBehaviour
     private IBulletFactory _bulletFactory;
 
     private Pool<SimpleBullet> _poolOne;
-
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
@@ -28,16 +27,17 @@ public class BulletSpawner : MonoBehaviour
         StopCoroutine(CreateBullet());
     }
 
+
     private IEnumerator CreateBullet()
     {
         while (gameObject.activeSelf)
-        { 
+        {
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _poolOne.GetFreeElement(point.transform.position);
                 bullet.Direction = (int)_direction;
             }
-             yield return new WaitForSeconds(_spawnInterval);
+            yield return new WaitForSeconds(_spawnInterval);
         }
        
     }
