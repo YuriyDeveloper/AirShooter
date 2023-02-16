@@ -14,6 +14,7 @@ public class Services
 
     private class Implementation<TService> where TService : IService
     {
+
         public static TService ServiceInstance;
     }
 }
