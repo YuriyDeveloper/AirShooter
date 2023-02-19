@@ -18,21 +18,33 @@ public enum EnemyPlaneType
 public class EnemySpawner : MonoBehaviour
 {
 
-    [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private Transform _spawnPoint;
 
-    public EnemyType _enemyType;
-    public EnemyPlaneType _enemyPlaneType;
+    [SerializeField] private EnemyType _enemyType;
+    [SerializeField] private EnemyPlaneType _enemyPlaneType;
+
+    [SerializeField] private int _countSpawnEnemy;
 
     private IEnemyFactory _enemyFactory;
 
     private void Start()
     {
-        Spawn();
+        _enemyFactory = Services.Container.Single<IEnemyFactory>();
+        ChoiseEnemy();
     }
-    private void Spawn()
+    private void ChoiseEnemy()
     {
-        foreach (Transform point in _spawnPoints)
+        if (_enemyType == EnemyType.plane)
         {
+            SpawnEnemyPlane();
+        }
+    }
+
+    private void SpawnEnemyPlane()
+    {
+        for (int i = 0; i < _countSpawnEnemy; i++)
+        {
+            GameObject plane = _enemyFactory.CreateEnemyPlane(_enemyPlaneType, _spawnPoint);
             
         }
     }

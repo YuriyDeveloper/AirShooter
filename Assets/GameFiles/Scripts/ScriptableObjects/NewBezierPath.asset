@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37249d88ab2420438192605bebf03e6, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: e63b671cffc495e4fbc92452f6cb661c, type: 3}
+  m_Name: NewBezierPath
   m_EditorClassIdentifier: 

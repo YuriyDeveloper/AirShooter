@@ -5,21 +5,14 @@ using UnityEngine;
 public class EnemyFactory : IEnemyFactory
 {
     private IAssetProvider _assetProvider;
-    public GameObject CreateSimpleEnemyPlane()
+    public GameObject CreateEnemyPlane(EnemyPlaneType type, Transform point)
     {
-        // GameObject plane = Object.Instantiate(Resources.Load("Prefabs/EnemyPlanes/EnemyPlane"));
-        EnemyPlane plane = _assetProvider.Load("Prefabs/EnemyPlanes/EnemyPlane");
-        plane
-        return plane;
-    }
-    
-    public void CreateMiddleEnemyPlane()
-    {
-        
-    }
-
-    public void CreateEnemyHardPlane()
-    {
-       
+        _assetProvider = Services.Container.Single<IAssetProvider>();
+        if (type == EnemyPlaneType.simplePlane)
+        {
+             return Object.Instantiate(_assetProvider.Load("Prefabs/EnemyPlanes/EnemyPlane_1"), point);
+        }
+        return null;
+      
     }
 }

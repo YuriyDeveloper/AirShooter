@@ -4,7 +4,6 @@ using UnityEngine;
 
 public interface IEnemyFactory : IFactory
 {
-    public GameObject CreateSimpleEnemyPlane();
-    public void CreateMiddleEnemyPlane();
-    public void CreateEnemyHardPlane();
+    public GameObject CreateEnemyPlane(EnemyPlaneType type, Transform point);
+   
 }
