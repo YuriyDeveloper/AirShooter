@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2208061612973761474}
   - component: {fileID: 7748304299631965041}
   - component: {fileID: 1145017713943276633}
+  - component: {fileID: -2229468023837076006}
   m_Layer: 0
   m_Name: EnemyPlane
   m_TagString: Untagged
@@ -125,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 809b49853c386504dac40a39cea5b04e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.8962264, g: 0.26633143, b: 0.26633143, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,9 +134,22 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2229468023837076006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b2bee426dffb84fab383e91b662baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPlaneData: {fileID: 0}
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class Bezier
 {
-    public static Vector2 GetFivePoints(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)
+    public static Vector2 GetFifePoints(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)
     {
         Vector2 p01 = Vector2.Lerp(p0, p1, t);
         Vector2 p12 = Vector2.Lerp(p1, p2, t);

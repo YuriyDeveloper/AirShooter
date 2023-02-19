@@ -1,19 +1,25 @@
 
 
+using UnityEngine;
+
 public class EnemyFactory : IEnemyFactory
 {
-    private void CreateSimpleEnemy()
+    private IAssetProvider _assetProvider;
+    public GameObject CreateSimpleEnemyPlane()
     {
-
+        // GameObject plane = Object.Instantiate(Resources.Load("Prefabs/EnemyPlanes/EnemyPlane"));
+        EnemyPlane plane = _assetProvider.Load("Prefabs/EnemyPlanes/EnemyPlane");
+        plane
+        return plane;
     }
-    private void CreateMiddleEnemy()
+    
+    public void CreateMiddleEnemyPlane()
     {
-
+        
     }
-    private void CreaeHardEnemy()
+
+    public void CreateEnemyHardPlane()
     {
-
+       
     }
-
-
 }
