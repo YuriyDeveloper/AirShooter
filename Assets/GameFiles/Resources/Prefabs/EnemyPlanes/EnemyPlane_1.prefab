@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8f322ee076beb40846dc4f2d93fe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnInterval: 0.4
+  _spawnInterval: 2
   autoExpand: 1
   _spawnPoints:
   - {fileID: 2310352513018854315}
@@ -149,12 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b67d1b6458d3340bf9f45bfe27ed67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _p0: {fileID: 0}
-  _p1: {fileID: 0}
-  _p2: {fileID: 0}
-  _p3: {fileID: 0}
-  _p4: {fileID: 0}
-  _t: 0
+  _points: []
+  _pathPoint: 0
+  _speed: 0.1
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0

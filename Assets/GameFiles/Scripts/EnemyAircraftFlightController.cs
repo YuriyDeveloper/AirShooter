@@ -19,7 +19,15 @@ public class EnemyAircraftFlightController : MonoBehaviour
 
     private IEnumerator StartLaunchesCoroutine()
     {
-        yield return new WaitForSeconds(4);
-        _enemyLaunchPlanes[0].SetActive(true);
+        int i = 0;
+        while (gameObject.activeSelf)
+        {
+            yield return new WaitForSeconds(4);
+            _enemyLaunchPlanes[i].SetActive(true);
+            i++;
+            yield return new WaitForSeconds(15);
+            _enemyLaunchPlanes[i].SetActive(true);
+        }
+        
     }
 }

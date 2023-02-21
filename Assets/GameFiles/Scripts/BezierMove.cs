@@ -2,37 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
-public class BezierPath : MonoBehaviour
+//[ExecuteAlways]
+public class BezierMove : MonoBehaviour
 {
-
-    //[SerializeField] private Transform _p0;
-    //[SerializeField] private Transform _p1;
-    //[SerializeField] private Transform _p2;
-    //[SerializeField] private Transform _p3;
-    //[SerializeField] private Transform _p4;
     [SerializeField] private List<Transform> _points;
+    [Range(0, 1)] [SerializeField] private float _pathPoint;
+    [SerializeField] private float _speed;
 
-    [Range(0, 1)]
-    [SerializeField] private float _t;
-    public float T { get { return _t; } }
-
-    private void Start()
-    {
-
-    }
+    public float PathPoint { get { return _pathPoint; } }
+    public List<Transform> Points { get { return _points; }  set { _points = value; } }
 
     private void Update()
     {
+        Move();
+        SetSpeed();
+    }
+
+    private void Move()
+    {
         transform.position = Bezier.GetFifePoints(_points[0].position, _points[1].position,
-            _points[2].position, _points[3].position, _points[4].position, _t);
+                    _points[2].position, _points[3].position, _points[4].position, _pathPoint);
+    }
+
+    private void SetSpeed()
+    {
+        _pathPoint += _speed * Time.deltaTime;
     }
 
     private void OnDrawGizmos()
     {
         int sigmentsNumber = 20;
         Vector2 preveousePoint = _points[0].position;
-
         for (int i = 0; i < sigmentsNumber + 1; i++)
         {
             float parameter = (float)i / sigmentsNumber;
