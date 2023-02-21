@@ -17,7 +17,6 @@ public enum EnemyPlaneType
 
 public class EnemySpawner : MonoBehaviour
 {
-
     [SerializeField] private Transform _spawnPoint;
 
     [SerializeField] private EnemyType _enemyType;

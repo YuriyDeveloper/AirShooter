@@ -20,7 +20,6 @@ public class SimpleBullet : MonoBehaviour, IBullet
     private void FixedUpdate()
     {
         _timer += Time.deltaTime;
-        Debug.Log("timer " + _timer);
         Flying();
         SelfDestruction();
     }
