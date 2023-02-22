@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAircraftFlightController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _enemyLaunchPlanes;
-
+    [SerializeField] private List<float> _intervalBetweenLaunches;
     private void Start()
     {
         StartLaunches();
@@ -19,14 +19,13 @@ public class EnemyAircraftFlightController : MonoBehaviour
 
     private IEnumerator StartLaunchesCoroutine()
     {
-        int i = 0;
-        while (gameObject.activeSelf)
+        foreach (GameObject launch in _enemyLaunchPlanes)
         {
-            yield return new WaitForSeconds(4);
-            _enemyLaunchPlanes[i].SetActive(true);
-            i++;
-            yield return new WaitForSeconds(15);
-            _enemyLaunchPlanes[i].SetActive(true);
+            int index = 0;
+            yield return new WaitForSeconds(_intervalBetweenLaunches[index]);
+            if (launch == null) { break; }
+            launch.SetActive(true);
+            
         }
         
     }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[ExecuteAlways]
 public class BezierMove : MonoBehaviour
 {
     [SerializeField] private List<Transform> _points;
@@ -15,7 +14,7 @@ public class BezierMove : MonoBehaviour
     private void Update()
     {
         Move();
-        SetSpeed();
+        IncreaseValue();
     }
 
     private void Move()
@@ -24,7 +23,7 @@ public class BezierMove : MonoBehaviour
                     _points[2].position, _points[3].position, _points[4].position, _pathPoint);
     }
 
-    private void SetSpeed()
+    private void IncreaseValue()
     {
         _pathPoint += _speed * Time.deltaTime;
     }

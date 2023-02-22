@@ -19,7 +19,7 @@ public enum EnemyPlaneType
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<Transform> _bezierPoints;
-    [SerializeField] private Transform _spawnPoint;
+    private Transform _spawnPoint;
 
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private EnemyPlaneType _enemyPlaneType;
@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         _enemyFactory = Services.Container.Single<IEnemyFactory>();
+        _spawnPoint = _bezierPoints[0];
         ChoiseEnemy();
     }
     private void ChoiseEnemy()

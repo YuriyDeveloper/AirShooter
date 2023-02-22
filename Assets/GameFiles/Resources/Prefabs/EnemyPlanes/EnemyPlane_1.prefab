@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 7748304299631965041}
   - component: {fileID: 1145017713943276633}
   - component: {fileID: -639774072450918393}
+  - component: {fileID: 8765306629578967927}
+  - component: {fileID: 5658924260626503218}
   m_Layer: 0
   m_Name: EnemyPlane_1
   m_TagString: Untagged
@@ -152,6 +154,32 @@ MonoBehaviour:
   _points: []
   _pathPoint: 0
   _speed: 0.1
+--- !u!114 &8765306629578967927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efcb2fced4e12244988b81253fc4be73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destructionIf: 1
+--- !u!65 &5658924260626503218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.114923, y: 1.0067691, z: 0.2}
+  m_Center: {x: 0.008538395, y: 0.0056924224, z: 0}
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0
