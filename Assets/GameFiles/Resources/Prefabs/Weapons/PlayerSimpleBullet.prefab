@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1226121100832473948}
   m_Layer: 0
   m_Name: PlayerSimpleBullet
-  m_TagString: Untagged
+  m_TagString: PlayerSimpleBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  _timer: 0
+  _damage: 0
 --- !u!50 &-9029696057080550465
 Rigidbody2D:
   serializedVersion: 4

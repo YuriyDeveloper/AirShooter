@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BulletType
+{
+    MainPlayer,
+    MainPlayerAssistent,
+    Enemy,
+}
+
 enum Direction
 {
     MainPlayer = 1,
@@ -14,15 +21,16 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private bool autoExpand = false;
     [SerializeField] private List<Transform> _spawnPoints;
 
+    [SerializeField] private BulletType _bulletType;
     [SerializeField] private Direction _direction;
     private IBulletFactory _bulletFactory;
 
-    private Pool<SimpleBullet> _poolOne;
+    private Pool<SimpleBullet> _pool;
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _poolOne = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(), 100);
-        _poolOne.autoExpand = autoExpand;
+        _pool = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(_bulletType, (int)_direction), 100);
+        _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
     }
@@ -34,8 +42,8 @@ public class BulletSpawner : MonoBehaviour
         {
             foreach (Transform point in _spawnPoints)
             {
-                IBullet bullet = _poolOne.GetFreeElement(point.transform.position);
-                bullet.Direction = (int)_direction;
+                IBullet bullet = _pool.GetFreeElement(point.transform.position);
+                 
             }
             yield return new WaitForSeconds(_spawnInterval);
         }

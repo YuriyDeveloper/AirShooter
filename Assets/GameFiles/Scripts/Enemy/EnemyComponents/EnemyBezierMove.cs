@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BezierMove : MonoBehaviour
+public class EnemyBezierMove : MonoBehaviour
 {
     [SerializeField] private List<Transform> _points;
     [Range(0, 1)] [SerializeField] private float _pathPoint;

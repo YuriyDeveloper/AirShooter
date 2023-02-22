@@ -11,12 +11,12 @@ public enum DestructionType
 public class EnemySelfDestruction : MonoBehaviour
 {
     [SerializeField] private DestructionType _destructionIf;
-    private BezierMove _bezierMove;
+    private EnemyBezierMove _bezierMove;
     private bool _canBezierEndPointDestruction;
 
     private void Start()
     {
-        _bezierMove = GetComponent<BezierMove>();
+        _bezierMove = GetComponent<EnemyBezierMove>();
         ChoiseDestructionType();   
     }
 

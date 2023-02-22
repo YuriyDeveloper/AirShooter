@@ -9,11 +9,11 @@ public class EnemyFactory : IEnemyFactory
         _assetProvider = Services.Container.Single<IAssetProvider>();
         if (type == EnemyPlaneType.simplePlane)
         {
-            GameObject plane = Object.Instantiate(_assetProvider.Load("Prefabs/EnemyPlanes/EnemyPlane_1"));
+            GameObject plane = Object.Instantiate(_assetProvider.Load("Prefabs/Enemy/EnemyPlane_1"));
             plane.transform.position = spawnPoint.position;
             foreach (Transform bezierPoint in bezierPoints)
             {
-                plane.GetComponent<BezierMove>().Points.Add(bezierPoint);
+                plane.GetComponent<EnemyBezierMove>().Points.Add(bezierPoint);
             }
             return plane;
         }
