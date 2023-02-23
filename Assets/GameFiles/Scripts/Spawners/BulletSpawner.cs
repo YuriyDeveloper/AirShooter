@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum BulletType
 {
@@ -29,7 +30,7 @@ public class BulletSpawner : MonoBehaviour
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(_bulletType, (int)_direction), 100);
+        _pool = new Pool<SimpleBullet>(_bulletFactory.CreateSimpleBullet(_bulletType), 100);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
@@ -43,7 +44,7 @@ public class BulletSpawner : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
-                 
+                bullet.Direction = (int)_direction;
             }
             yield return new WaitForSeconds(_spawnInterval);
         }

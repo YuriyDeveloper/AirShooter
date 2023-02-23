@@ -6,7 +6,7 @@ public class SimpleBullet : MonoBehaviour, IBullet
     [SerializeField] private int _speed;
     [SerializeField] private float _timer;
     [SerializeField] private float _damage;
-
+    [SerializeField] private SpriteRenderer _collissionEffect;
     private Rigidbody2D _rigidbody;
    
     public int Direction { get; set; }
@@ -24,11 +24,19 @@ public class SimpleBullet : MonoBehaviour, IBullet
         Flying();
         SelfDestruction();
     }
-
+    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(); 
+       
+    }
+    private void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
     private void Flying()
     {
         _rigidbody.velocity = new Vector2(0, _speed * Direction);
-        Debug.Log("Direction " + Direction);
     }
 
     private void SelfDestruction()
@@ -40,5 +48,12 @@ public class SimpleBullet : MonoBehaviour, IBullet
         }
     }
 
-    
+
+
+
+
+
+
+   
+
 }

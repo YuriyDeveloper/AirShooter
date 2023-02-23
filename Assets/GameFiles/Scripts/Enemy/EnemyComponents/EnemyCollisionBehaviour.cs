@@ -10,20 +10,21 @@ public class EnemyCollisionBehaviour : MonoBehaviour
     {
         _enemyPlaneState = GetComponent<EnemyPlaneState>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        IBullet takeBullet = collision.gameObject.GetComponent<IBullet>();
-        if (collision != null && takeBullet as SimpleBullet)
+        IBullet takeBullet = collider.gameObject.GetComponent<IBullet>();
+        if (collider != null && takeBullet as SimpleBullet)
         {
-            TakeDamage(takeBullet.Damage, collision);
+            TakeDamage(takeBullet.Damage, collider);
         }
     }
 
-    private void TakeDamage(float damage, Collision2D collision)
+    private void TakeDamage(float damage, Collider2D collision)
     {
         if (_enemyPlaneState != null)
         {
             _enemyPlaneState.Health -= damage;
+            Debug.Log("take damage " + damage);
         }
     }
 }

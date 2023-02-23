@@ -14,6 +14,7 @@ public class EnemyFactory : IEnemyFactory
             foreach (Transform bezierPoint in bezierPoints)
             {
                 plane.GetComponent<EnemyBezierMove>().Points.Add(bezierPoint);
+                
             }
             return plane;
         }
