@@ -16,16 +16,25 @@ public enum EnemyPlaneType
     hardPlane
 }
 
+public enum SimpleEnemyPlaneID
+{
+    SimpleEnemyPlane_1,
+    SimpleEnemyPlane_2,
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<Transform> _bezierPoints;
-    private Transform _spawnPoint;
+   
 
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private EnemyPlaneType _enemyPlaneType;
+    [SerializeField] private SimpleEnemyPlaneID _simpleEnemyPlaneID;
 
     [SerializeField] private int _countSpawnEnemy;
     [SerializeField] private int _intervalBetweenSpawn;
+    
+    private Transform _spawnPoint;
 
     private IEnemyFactory _enemyFactory;
 
@@ -49,7 +58,12 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < _countSpawnEnemy; i++)
         {
             
-            GameObject plane = _enemyFactory.CreateEnemyPlane(_enemyPlaneType, _spawnPoint, _bezierPoints);
+            GameObject plane = _enemyFactory.CreateEnemyPlane(
+                _enemyType,
+                _enemyPlaneType,
+                _simpleEnemyPlaneID,
+                _spawnPoint,
+                _bezierPoints);
             yield return new WaitForSeconds(_intervalBetweenSpawn);
         }
     }

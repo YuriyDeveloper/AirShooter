@@ -24,7 +24,7 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
         {
             _collisisonEffect.enabled = true;
             _collisisonEffect.gameObject.transform.position = collider.transform.position;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.4f);
             _collisisonEffect.enabled = false;
         }
     }

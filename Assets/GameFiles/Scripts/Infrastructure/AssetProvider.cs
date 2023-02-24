@@ -1,11 +1,16 @@
 using UnityEngine;
-
+using System;
 public class AssetProvider : IAssetProvider
 {
-    public GameObject Load(string path)
+    public SimpleBullet LoadBullet(string path)
     {
-        GameObject asset = Resources.Load(path) as GameObject;
+        SimpleBullet asset = Resources.Load(path, typeof(SimpleBullet)) as SimpleBullet;
         return asset;
     }
 
+    public GameObject LoadEnemy(string path)
+    {
+        GameObject plane = Resources.Load(path) as GameObject;
+        return plane;
+    }
 }

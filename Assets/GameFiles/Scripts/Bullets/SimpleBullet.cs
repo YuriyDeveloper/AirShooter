@@ -7,6 +7,7 @@ public class SimpleBullet : MonoBehaviour, IBullet
     [SerializeField] private float _timer;
     [SerializeField] private float _damage;
     [SerializeField] private SpriteRenderer _collissionEffect;
+
     private Rigidbody2D _rigidbody;
    
     public int Direction { get; set; }
@@ -44,6 +45,7 @@ public class SimpleBullet : MonoBehaviour, IBullet
 
         if (_timer > 2)
         {
+            
             gameObject.SetActive(false);
         }
     }
