@@ -42,7 +42,9 @@ GameObject:
   - component: {fileID: 2208061612973761474}
   - component: {fileID: 7748304299631965041}
   - component: {fileID: 1145017713943276633}
-  - component: {fileID: 8684436688873921926}
+  - component: {fileID: 4734208680805538795}
+  - component: {fileID: 2198821459641933614}
+  - component: {fileID: -8313650179816737212}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_2
   m_TagString: Untagged
@@ -138,7 +140,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8684436688873921926
+--- !u!114 &4734208680805538795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +154,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _points: []
   _pathPoint: 0
-  _speed: 0
+  _speed: 0.3
+--- !u!114 &2198821459641933614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dd4521f57278949a29749873f72b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _collisisonEffect: {fileID: 0}
+--- !u!114 &-8313650179816737212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efcb2fced4e12244988b81253fc4be73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destructionIf: 1
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0

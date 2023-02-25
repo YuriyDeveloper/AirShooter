@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4428655412989837635}
-  - component: {fileID: -6944520564442370703}
+  - component: {fileID: 715270028847872371}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: GroupEnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6944520564442370703
+--- !u!114 &715270028847872371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7546639242074880729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6349b7bf59315c49b03a17d789bf0a7, type: 3}
+  m_Script: {fileID: 11500000, guid: aee19fb9450870840bfb9597ac1c7c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefabs: []
-  _spawnPoints: []
-  _intervalBetweenSpawns: 
+  _bezierPoints: []
+  _countSpawnEnemy: 0
   _firstSpawnTime: 0
+  _intervalBetweenSpawn: 0
