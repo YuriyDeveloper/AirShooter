@@ -5,6 +5,6 @@ using UnityEngine;
 
 public interface IEnemyFactory : IFactory
 {
-    public GameObject CreateEnemyPlane(EnemyType enemyType, EnemyPlaneType type, SimpleEnemyPlaneID _simpleEnemyPlaneID, Transform spawnPoint, List<Transform> bezierPoints);
+    public void CreateEnemyPlane(GameObject enemy, Transform spawnPoint, List<Transform> bezierPoints);
    
 }
