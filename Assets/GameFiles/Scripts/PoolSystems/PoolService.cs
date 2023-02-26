@@ -1,21 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pool<T> where T : MonoBehaviour
+public class PoolService<T> where T : MonoBehaviour
 {
     public T prefab { get; }
     public bool autoExpand { get; set; }
     public Transform container { get; }
 
     private List<T> pool;
-    public Pool(T prefab, int count)
+
+    public PoolService<T> GetInstance()
+    {
+        return this;
+    }
+
+    public PoolService(T prefab, int count)
     {
         this.prefab = prefab;
         container = null;
         CreatePool(count);
     }
 
-    public Pool(T prefab, int count, Transform container)
+    public PoolService(T prefab, int count, Transform container)
     {
         this.prefab = prefab;
         this.container = container;

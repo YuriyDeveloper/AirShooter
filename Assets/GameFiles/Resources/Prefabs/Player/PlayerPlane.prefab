@@ -239,10 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8f322ee076beb40846dc4f2d93fe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
   _spawnInterval: 0.2
   autoExpand: 1
   _spawnPoints:
   - {fileID: 3614006259903991816}
   - {fileID: 6394509433615086813}
-  _bulletType: 0
   _direction: 1
