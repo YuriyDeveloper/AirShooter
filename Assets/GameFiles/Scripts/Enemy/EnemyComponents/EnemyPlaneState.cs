@@ -20,7 +20,7 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
 
     private IEnumerator PlayCollisionEffect(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("PlayerSimpleBullet"))
+        if (collider.gameObject.CompareTag("PlayerSimpleBullet") && _collisisonEffect)
         {
             _collisisonEffect.enabled = true;
             _collisisonEffect.gameObject.transform.position = collider.transform.position;

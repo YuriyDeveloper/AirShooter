@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class SingleEnemySpawner : MonoBehaviour
 {
-    [SerializeField] private List<EnemyLaunch> _enemyLaunch = new List<EnemyLaunch>();
+    [SerializeField] private List<SingleEnemyLaunch> _enemyLaunch = new List<SingleEnemyLaunch>();
     
 
     private IEnemyFactory _enemyFactory;
@@ -25,16 +25,15 @@ public class SingleEnemySpawner : MonoBehaviour
         for (int index = 0; index < _enemyLaunch.Count; index++)
         {
              yield return new WaitForSeconds(_enemyLaunch[index].spawnTime);
-             _enemyFactory.CreateEnemy(_enemyLaunch[index].enemyPrefab, _enemyLaunch[index].spawnPoint, _enemyLaunch[index]._bezierMove);
+             _enemyFactory.CreateEnemy(_enemyLaunch[index].enemyPrefab, _enemyLaunch[index]._bezierMove[0], _enemyLaunch[index]._bezierMove);
         }
     }
 }
 
 [Serializable]
-public class EnemyLaunch
+public class SingleEnemyLaunch
 {
     public GameObject enemyPrefab;
-    public Transform spawnPoint;
     public int spawnTime;
     public List<Transform> _bezierMove;
 }
