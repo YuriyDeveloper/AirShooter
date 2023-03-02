@@ -2,9 +2,9 @@ using UnityEngine;
 using System;
 public class AssetProvider : IAssetProvider
 {
-    public SimpleBullet LoadBullet(string path)
+    public Bullet LoadBullet(string path)
     {
-        SimpleBullet asset = Resources.Load(path, typeof(SimpleBullet)) as SimpleBullet;
+        Bullet asset = Resources.Load(path, typeof(Bullet)) as Bullet;
         return asset;
     }
 

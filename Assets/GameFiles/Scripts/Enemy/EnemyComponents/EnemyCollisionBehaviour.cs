@@ -13,7 +13,7 @@ public class EnemyCollisionBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         IBullet takeBullet = collider.gameObject.GetComponent<IBullet>();
-        if (collider != null && takeBullet as SimpleBullet)
+        if (collider != null && takeBullet as Bullet)
         {
             TakeDamage(takeBullet.Damage, collider);
         }

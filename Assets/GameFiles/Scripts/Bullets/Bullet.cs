@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class SimpleBullet : MonoBehaviour, IBullet
+public class Bullet : MonoBehaviour, IBullet
 {
     [SerializeField] private int _speed;
     [SerializeField] private float _timer;

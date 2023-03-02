@@ -7,10 +7,16 @@ using UnityEngine.EventSystems;
 enum Direction
 {
     up = 1,
-    down = -1
+    down = -1,
 }
 
-public class BulletSpawner : MonoBehaviour
+enum directionAngle
+{
+    left, 
+    right
+}
+
+public class BulletLauncher : MonoBehaviour
 {
     [SerializeField] private Direction _direction;
     [SerializeField] private GameObject _bulletPrefab;
@@ -20,11 +26,13 @@ public class BulletSpawner : MonoBehaviour
    
     private IBulletFactory _bulletFactory;
 
-    private PoolService<SimpleBullet> _pool;
+    private Pool<Bullet> _pool;
+
     private void Start()
     {
+        Debug.Log("bullet spawner start");
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new PoolService<SimpleBullet>(_bulletFactory.CreateBullet(_bulletPrefab, (int)_direction), 100);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab, (int)_direction), 10);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());

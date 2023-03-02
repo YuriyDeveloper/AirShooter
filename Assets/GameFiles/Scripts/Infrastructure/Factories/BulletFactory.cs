@@ -3,12 +3,13 @@ using UnityEngine;
 public class BulletFactory : IBulletFactory
 {
 
-    public SimpleBullet CreateBullet(GameObject bullet, int moveDirection)
+    public Bullet CreateBullet(GameObject bullet, int moveDirection)
     {
-        SimpleBullet simpleBullet = Object.Instantiate(bullet).GetComponent<SimpleBullet>();
+        Bullet simpleBullet = Object.Instantiate(bullet).GetComponent<Bullet>();
         simpleBullet.Direction = moveDirection;
-        return simpleBullet.GetComponent<SimpleBullet>();
+        return simpleBullet.GetComponent<Bullet>();
     }
 
    
 }
+
