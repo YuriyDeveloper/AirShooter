@@ -10,8 +10,6 @@ public class Pool<T> where T : MonoBehaviour
 
     private List<T> pool;
 
-    
-
     public Pool(T prefab, int count)
     {
         this.prefab = prefab;

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 
 enum Direction
@@ -30,15 +29,12 @@ public class BulletLauncher : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("bullet spawner start");
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab, (int)_direction), 10);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab, (int)_direction), 30);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
     }
-
-
 
 
     private IEnumerator CreateBullet()
