@@ -12,6 +12,7 @@ public class TouchController : MonoBehaviour
     {
 
         _rigidbody = GetComponent<Rigidbody2D>();
+
     }
 
     private void FixedUpdate()
