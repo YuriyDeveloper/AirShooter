@@ -10,6 +10,7 @@ public class TouchController : MonoBehaviour
 
     private void Start()
     {
+
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
