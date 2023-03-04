@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class BulletLauncher : MonoBehaviour
+public class MainPlayerBulletLauncher : MonoBehaviour
 {
-    [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private float _spawnInterval;
     [SerializeField] private bool autoExpand = false;
-   
+
     private IBulletFactory _bulletFactory;
 
     private Pool<Bullet> _pool;
@@ -18,12 +15,17 @@ public class BulletLauncher : MonoBehaviour
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab), 30);
+        
+    }
+
+    public void TakeBulletType(GameObject bullet)
+    {
+        _pool = null;
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(bullet), 30);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
     }
-
 
     private IEnumerator CreateBullet()
     {
@@ -32,9 +34,9 @@ public class BulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
+
             }
             yield return new WaitForSeconds(_spawnInterval);
         }
-       
     }
 }

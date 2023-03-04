@@ -75,9 +75,10 @@ GameObject:
   - component: {fileID: 5918384500739287900}
   - component: {fileID: 2106285222377604786}
   - component: {fileID: 2424626407728418512}
-  - component: {fileID: 808144259327789358}
   - component: {fileID: 101498268231741768}
   - component: {fileID: 3517857039064744825}
+  - component: {fileID: 4960872035880027244}
+  - component: {fileID: 5035713459484125331}
   m_Layer: 0
   m_Name: PlayerPlane
   m_TagString: Untagged
@@ -229,25 +230,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14458342, y: 0.62536657}
   m_EdgeRadius: 0
---- !u!114 &808144259327789358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918384500739287896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8f322ee076beb40846dc4f2d93fe6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _direction: 1
-  _bulletPrefab: {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  _spawnPoints:
-  - {fileID: 3614006259903991816}
-  - {fileID: 6394509433615086813}
-  _spawnInterval: 0.2
-  autoExpand: 1
 --- !u!114 &101498268231741768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,3 +263,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4960872035880027244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc820e6e5f99c74dbe2d3ad35179147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletTypes:
+  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
+  type: 0
+--- !u!114 &5035713459484125331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e6b8fadd9a54640b349e35d987da43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 3614006259903991816}
+  - {fileID: 6394509433615086813}
+  _spawnInterval: 0.4
+  autoExpand: 0

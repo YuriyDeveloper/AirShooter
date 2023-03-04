@@ -1,18 +1,17 @@
 using UnityEngine;
 
-
 public class Bullet : MonoBehaviour, IBullet
 {
-    [SerializeField] private int _flyDirection;
-    [SerializeField] private int _directionAngle;
+    [SerializeField] private int _YDirection;
+    private int _XDirection;
     [SerializeField] private int _speed;
     [SerializeField] private float _timer;
-    [SerializeField] private float _damage;
+    [SerializeField] private int _damage;
     [SerializeField] private SpriteRenderer _collissionEffect;
 
     private Rigidbody2D _rigidbody;
 
-    
+    public int Damage { get => _damage; set => throw new System.NotImplementedException(); }
 
     private void OnEnable()
     {
@@ -32,8 +31,6 @@ public class Bullet : MonoBehaviour, IBullet
         Destroy(); 
     }
 
-
-
     private void Destroy()
     {
         gameObject.SetActive(false);
@@ -41,25 +38,21 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Flying()
     {
-        _rigidbody.velocity = new Vector2(_directionAngle, _speed * _flyDirection);
+
+        _rigidbody.velocity = new Vector2(2 * _XDirection , _speed * _YDirection);
     }
 
     private void SelfDestruction()
     {
-
         if (_timer > 2)
         {
-            
             gameObject.SetActive(false);
         }
     }
 
-
-
-
-
-
-
-   
+    public void SetXDirection(int direction)
+    {
+        _XDirection = direction;
+    }
 
 }

@@ -67,7 +67,9 @@ public class Pool<T> where T : MonoBehaviour
         }
         if (autoExpand)
         {
-            return CreateObject(true);
+            T go = CreateObject(true);
+            go.gameObject.transform.position = spawnPoint;
+            return go;
         }
         throw new System.Exception("error pool");
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1226121100832473948}
   - component: {fileID: 8938853868438775721}
   m_Layer: 0
-  m_Name: EnemySimpleBullet
+  m_Name: EnemySimpleBulletType_1
   m_TagString: EnemySimpleBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c20312fb7642445b76dfa40156e8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _YDirection: -1
   _speed: 15
   _timer: 2
   _damage: 5
