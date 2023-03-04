@@ -18,7 +18,7 @@ public class EnemyBulletLauncher : MonoBehaviour
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab), 30);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab, true), 30);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
@@ -32,6 +32,7 @@ public class EnemyBulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
+                bullet.bulletIs = BulletIs.enemy;
 
             }
             yield return new WaitForSeconds(_spawnInterval);

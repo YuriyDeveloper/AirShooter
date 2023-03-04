@@ -3,10 +3,11 @@ using UnityEngine;
 public class BulletFactory : IBulletFactory
 {
 
-    public Bullet CreateBullet(GameObject bullet)
+    public Bullet CreateBullet(GameObject bullet, bool firstBulletDestroy)
     {
-        Bullet simpleBullet = Object.Instantiate(bullet).GetComponent<Bullet>();
-        return simpleBullet.GetComponent<Bullet>();
+        Bullet concretteBullet = Object.Instantiate(bullet).GetComponent<Bullet>();
+        if (firstBulletDestroy) { concretteBullet.gameObject.SetActive(false); }
+        return concretteBullet.GetComponent<Bullet>();
     }
 
    

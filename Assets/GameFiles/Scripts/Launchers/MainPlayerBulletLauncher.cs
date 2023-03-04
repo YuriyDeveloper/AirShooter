@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainPlayerBulletLauncher : MonoBehaviour
 {
     [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private List<Transform> _additionalSpawnPoints;
     [SerializeField] private float _spawnInterval;
     [SerializeField] private bool autoExpand = false;
 
@@ -20,9 +21,9 @@ public class MainPlayerBulletLauncher : MonoBehaviour
 
     public void TakeBulletType(GameObject bullet)
     {
-        _pool = null;
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(bullet), 30);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(bullet, true), 0);
         _pool.autoExpand = autoExpand;
+        StopAllCoroutines();
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
     }
@@ -34,7 +35,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
-
+                bullet.bulletIs = BulletIs.player;
             }
             yield return new WaitForSeconds(_spawnInterval);
         }
