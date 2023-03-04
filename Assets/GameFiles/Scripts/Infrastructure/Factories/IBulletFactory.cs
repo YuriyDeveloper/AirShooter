@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IBulletFactory : IService
 {
-    public Bullet CreateBullet(GameObject bullet, int moveDirection);
+    public Bullet CreateBullet(GameObject bullet);
 }

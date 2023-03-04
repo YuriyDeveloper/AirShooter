@@ -3,21 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-enum Direction
-{
-    up = 1,
-    down = -1,
-}
-
-enum directionAngle
-{
-    left, 
-    right
-}
 
 public class BulletLauncher : MonoBehaviour
 {
-    [SerializeField] private Direction _direction;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private float _spawnInterval;
@@ -30,7 +18,7 @@ public class BulletLauncher : MonoBehaviour
     private void Start()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab, (int)_direction), 30);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletPrefab), 30);
         _pool.autoExpand = autoExpand;
         StartCoroutine(CreateBullet());
         StopCoroutine(CreateBullet());
@@ -44,7 +32,6 @@ public class BulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
-                bullet.Direction = (int)_direction;
             }
             yield return new WaitForSeconds(_spawnInterval);
         }
