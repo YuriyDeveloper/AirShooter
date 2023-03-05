@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6394509433615086813}
   m_Layer: 0
-  m_Name: SpawnPoint (2)
+  m_Name: SpawnPoint_3
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5918384500739287899}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324270789785325946
 GameObject:
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2936644436652864356}
   m_Layer: 0
-  m_Name: SpawnPoint (4)
+  m_Name: SpawnPoint_4
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6772257632518721464}
   m_Layer: 0
-  m_Name: SpawnPoint (3)
+  m_Name: SpawnPoint_1
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5918384500739287899}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5217183020159026445
 GameObject:
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3614006259903991816}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: SpawnPoint_2
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5918384500739287899}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5918384500739287896
 GameObject:
@@ -161,9 +161,9 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 6772257632518721464}
   - {fileID: 3614006259903991816}
   - {fileID: 6394509433615086813}
-  - {fileID: 6772257632518721464}
   - {fileID: 2936644436652864356}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -356,10 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoints:
+  - {fileID: 6772257632518721464}
   - {fileID: 3614006259903991816}
   - {fileID: 6394509433615086813}
-  _additionalSpawnPoints:
-  - {fileID: 6772257632518721464}
   - {fileID: 2936644436652864356}
   _spawnInterval: 0.4
   autoExpand: 1

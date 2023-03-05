@@ -5,7 +5,6 @@ using UnityEngine;
 public class MainPlayerBulletLauncher : MonoBehaviour
 {
     [SerializeField] private List<Transform> _spawnPoints;
-    [SerializeField] private List<Transform> _additionalSpawnPoints;
     [SerializeField] private float _spawnInterval;
     [SerializeField] private bool autoExpand = false;
 
@@ -19,7 +18,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
         
     }
 
-    public void TakeBulletType(GameObject bullet)
+    public void StartBulletsLaunch(GameObject bullet)
     {
         _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(bullet, true), 0);
         _pool.autoExpand = autoExpand;

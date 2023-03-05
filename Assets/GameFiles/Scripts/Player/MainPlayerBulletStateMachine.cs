@@ -34,7 +34,7 @@ public class MainPlayerBulletStateMachine : MonoBehaviour
     public void ChoiseTypeOne()
     {
         if (_oneTypeIsActive) { return; }
-        _bulletLauncher.TakeBulletType(_bulletTypes[0]);
+        _bulletLauncher.StartBulletsLaunch(_bulletTypes[0]);
         _oneTypeIsActive = true;
         _twoTypeIsActive = false;
         _threeTypeIsActive = false;
@@ -43,7 +43,7 @@ public class MainPlayerBulletStateMachine : MonoBehaviour
     public void ChoiseTypeTwo()
     {
         if (_twoTypeIsActive) { return; }
-        _bulletLauncher.TakeBulletType(_bulletTypes[1]);
+        _bulletLauncher.StartBulletsLaunch(_bulletTypes[1]);
         _oneTypeIsActive = false;
         _twoTypeIsActive = true;
         _threeTypeIsActive = false;
@@ -52,7 +52,7 @@ public class MainPlayerBulletStateMachine : MonoBehaviour
     public void ChoiseTypeThree()
     {
         if(_threeTypeIsActive) { return; }
-        _bulletLauncher.TakeBulletType(_bulletTypes[2]);
+        _bulletLauncher.StartBulletsLaunch(_bulletTypes[2]);
         _oneTypeIsActive = false;
         _twoTypeIsActive = false;
         _threeTypeIsActive = true;

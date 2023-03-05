@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum BulletIs
@@ -6,6 +7,7 @@ public enum BulletIs
     player
 }
 
+[Serializable]
 public class Bullet : MonoBehaviour, IBullet
 {
     [SerializeField] private int _YDirection;
@@ -16,7 +18,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private BulletIs _bulletIs;
     private float _timer;
-    private int _XDirection = 3;
+    private int _XDirection;
 
     private Rigidbody2D _rigidbody;
 
