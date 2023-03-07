@@ -32,7 +32,7 @@ public class EnemyBulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _pool.GetFreeElement(point.transform.position);
-                bullet.bulletIs = BulletIs.enemy;
+                //bullet.bulletIs = BulletIs.enemy;
 
             }
             yield return new WaitForSeconds(_spawnInterval);

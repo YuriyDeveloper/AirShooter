@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7600506716037897670}
   - component: {fileID: 4725867012616575386}
   m_Layer: 0
-  m_Name: PlayerSimpleBulletType_2
+  m_Name: PlayerSimpleBulletType_3
   m_TagString: PlayerSimpleBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
