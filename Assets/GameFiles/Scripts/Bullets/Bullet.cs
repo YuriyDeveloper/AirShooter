@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private int _XDirection;
 
-    public int Damage { get => _damage; set => throw new System.NotImplementedException(); }
+    public float Damage { get => _damage; set => throw new System.NotImplementedException(); }
 
     private void OnEnable()
     {

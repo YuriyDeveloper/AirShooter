@@ -15,7 +15,7 @@ public class EnemyCollisionBehaviour : MonoBehaviour
         IBullet takeBullet = collider.gameObject.GetComponent<IBullet>();
         if (collider != null && takeBullet as Bullet)
         {
-            //TakeDamage(takeBullet.Damage, collider);
+            TakeDamage(takeBullet.Damage, collider);
         }
     }
 
