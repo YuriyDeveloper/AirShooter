@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50dd4521f57278949a29749873f72b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collisionExplosionAnimation: {fileID: 6414708701892675040, guid: b6f3a31bc3b17d8478be75892d499448, type: 3}
   _health: 100
   _collisisonEffect: {fileID: -3901857296793151519, guid: ae8e04707e3e7d94db910b7a46659325, type: 3}
 --- !u!114 &-8313650179816737212

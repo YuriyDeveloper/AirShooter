@@ -24,7 +24,6 @@ public class EnemyCollisionBehaviour : MonoBehaviour
         if (_enemyPlaneState != null)
         {
             _enemyPlaneState.Health -= damage;
-            Debug.Log("take damage " + damage);
         }
     }
 }

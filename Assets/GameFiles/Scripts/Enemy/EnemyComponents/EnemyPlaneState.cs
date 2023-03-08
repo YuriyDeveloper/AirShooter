@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyPlaneState : MonoBehaviour, IPlaneState
 {
+    [SerializeField] GameObject _collisionExplosionAnimation;
     [SerializeField] private float _health;
     [SerializeField] private SpriteRenderer _collisisonEffect;
     public float Health { get => _health; set => _health = value; }
@@ -31,11 +32,19 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
 
     private void Destroy()
     {
+       
         if (_health <= 0)
         {
+            if (_collisionExplosionAnimation)
+            {
+                GameObject destroyEffect = Instantiate(_collisionExplosionAnimation, transform.position, Quaternion.identity, null);
+            }
+           
             Destroy(gameObject);
         }
     }
+
+
 
 
 }

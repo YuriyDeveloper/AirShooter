@@ -7,6 +7,8 @@ public class MainPlayerBulletLauncher : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _bulletContainer;
     [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private List<SpriteRenderer> _firePoints;
+
     [SerializeField] private float _spawnInterval;
     private IBulletFactory _bulletFactory;
 
@@ -41,22 +43,36 @@ public class MainPlayerBulletLauncher : MonoBehaviour
         _poolList.Add(_pool_4);
 
         StopAllCoroutines();
-        StartCoroutine(CreateBullet());
-        StopCoroutine(CreateBullet());
+        StartCoroutine(SpawnBullet());
+        StopCoroutine(SpawnBullet());
+        StartCoroutine(FirePoints());
+        StopCoroutine(FirePoints());
     }
 
-    private IEnumerator CreateBullet()
+    private IEnumerator SpawnBullet()
     {
         while (gameObject.activeSelf)
         {
             int index = 0;
             foreach (Transform point in _spawnPoints)
             {
-                
                 IBullet bullet = _poolList[index].GetFreeElement(point.position);
                 index++;
             }
             yield return new WaitForSeconds(_spawnInterval);
+        }
+    }
+
+    private IEnumerator FirePoints()
+    {
+        while (gameObject.activeSelf)
+        {
+            foreach (SpriteRenderer sprite in _firePoints)
+            {
+                sprite.enabled = sprite.enabled ? false : true;
+            }
+
+             yield return new WaitForSeconds(_spawnInterval / 2);
         }
     }
 }
