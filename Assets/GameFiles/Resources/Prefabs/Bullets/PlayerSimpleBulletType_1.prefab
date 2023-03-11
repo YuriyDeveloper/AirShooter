@@ -187,7 +187,7 @@ MonoBehaviour:
   _lifeTime: 2
   _YDirection: 1
   _speed: 25
-  _damage: 10
+  _damage: 3
   _collissionEffect: {fileID: 0}
 --- !u!50 &5802577895720678742
 Rigidbody2D:

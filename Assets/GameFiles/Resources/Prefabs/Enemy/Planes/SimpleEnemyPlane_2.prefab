@@ -43,13 +43,14 @@ GameObject:
   - component: {fileID: 7748304299631965041}
   - component: {fileID: 1145017713943276633}
   - component: {fileID: 4734208680805538795}
-  - component: {fileID: 2198821459641933614}
   - component: {fileID: -8313650179816737212}
   - component: {fileID: 1515778658475838379}
   - component: {fileID: 277833747475841331}
   - component: {fileID: -1287593848486891130}
   - component: {fileID: 4964664721459232835}
   - component: {fileID: -7319248166870470859}
+  - component: {fileID: -3520156270819066595}
+  - component: {fileID: -6647180464315269611}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_2
   m_TagString: Untagged
@@ -71,6 +72,7 @@ Transform:
   m_Children:
   - {fileID: 2310352513018854315}
   - {fileID: 2136827150417804345}
+  - {fileID: 7283477323554938836}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
@@ -159,21 +161,6 @@ MonoBehaviour:
   _points: []
   _pathPoint: 0
   _speed: 0.3
---- !u!114 &2198821459641933614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2244286065462831405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50dd4521f57278949a29749873f72b86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collisionExplosionAnimation: {fileID: 6414708701892675040, guid: b6f3a31bc3b17d8478be75892d499448, type: 3}
-  _health: 100
-  _collisisonEffect: {fileID: -3901857296793151519, guid: ae8e04707e3e7d94db910b7a46659325, type: 3}
 --- !u!114 &-8313650179816737212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +272,66 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3520156270819066595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357d67d1b9de51345af3be930720073f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effect: {fileID: 354257786199296236, guid: 5993351d5a01f1842833d4a084d4354a, type: 3}
+  _spawnPoint: {fileID: 7283477323554938836}
+--- !u!114 &-6647180464315269611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667c31be62af1224eb5229fede3f0667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionExplosionAnimation: {fileID: 0}
+  _health: 100
+  _collisisonEffect: {fileID: 0}
+--- !u!1 &7425457690579602465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7283477323554938836}
+  m_Layer: 0
+  m_Name: LastingDamageEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7283477323554938836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7425457690579602465}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.289, y: 0.138, z: 0.040169343}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2208061612973761474}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0

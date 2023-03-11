@@ -46,11 +46,11 @@ GameObject:
   - component: {fileID: 8765306629578967927}
   - component: {fileID: 2221926367558602240}
   - component: {fileID: 7933617587511002553}
-  - component: {fileID: -5911347122323360626}
   - component: {fileID: 6328620556910681696}
   - component: {fileID: -7666787661781085925}
   - component: {fileID: 2478519138357863836}
   - component: {fileID: -990354929080661686}
+  - component: {fileID: 2128308680507543770}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_1
   m_TagString: Untagged
@@ -212,21 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528bf1fddc76a94a84cad19b3225cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5911347122323360626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2244286065462831405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50dd4521f57278949a29749873f72b86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collisionExplosionAnimation: {fileID: 6414708701892675040, guid: 1ef7b69c410a5d74db9828efa11b2653, type: 3}
-  _health: 100
-  _collisisonEffect: {fileID: 6395699960932373561}
 --- !u!61 &6328620556910681696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -299,6 +284,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2128308680507543770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667c31be62af1224eb5229fede3f0667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionExplosionAnimation: {fileID: 0}
+  _health: 100
+  _collisisonEffect: {fileID: 0}
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,10 +398,5 @@ PrefabInstance:
 --- !u!4 &3683942917623874102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2451146615024763374, guid: ae8e04707e3e7d94db910b7a46659325, type: 3}
-  m_PrefabInstance: {fileID: 1232796955440727000}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6395699960932373561 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: -3901857296793151519, guid: ae8e04707e3e7d94db910b7a46659325, type: 3}
   m_PrefabInstance: {fileID: 1232796955440727000}
   m_PrefabAsset: {fileID: 0}

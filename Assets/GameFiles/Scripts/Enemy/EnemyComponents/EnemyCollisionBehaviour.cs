@@ -6,7 +6,7 @@ public class EnemyCollisionBehaviour : MonoBehaviour
 {
     private EnemyPlaneState _enemyPlaneState;
 
-    private void Start()
+    private void OnEnable()
     {
         _enemyPlaneState = GetComponent<EnemyPlaneState>();
     }

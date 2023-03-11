@@ -6,7 +6,18 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
     [SerializeField] GameObject _collisionExplosionAnimation;
     [SerializeField] private float _health;
     [SerializeField] private SpriteRenderer _collisisonEffect;
+
+    private LastingDamageEffect _lastingDamageEffect;
+
+    private bool _canInstantiateLastingDamageEffect;
+
     public float Health { get => _health; set => _health = value; }
+
+    private void OnEnable()
+    {
+        _canInstantiateLastingDamageEffect = true;
+        _lastingDamageEffect = GetComponent<LastingDamageEffect>();
+    }
 
     private void Update()
     {
@@ -15,6 +26,7 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Damage();
         StartCoroutine(PlayCollisionEffect(collider));
         StopCoroutine(PlayCollisionEffect(collider));
     }
@@ -30,6 +42,15 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
         }
     }
 
+    private void Damage()
+    {
+        if (_lastingDamageEffect && _health < 20 && _canInstantiateLastingDamageEffect)
+        {
+            _canInstantiateLastingDamageEffect = false;
+            _lastingDamageEffect.DamageEffect();
+        }
+    }
+
     private void Destroy()
     {
        
@@ -40,7 +61,7 @@ public class EnemyPlaneState : MonoBehaviour, IPlaneState
                 GameObject destroyEffect = Instantiate(_collisionExplosionAnimation, transform.position, Quaternion.identity, null);
             }
            
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
