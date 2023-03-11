@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: -5911347122323360626}
   - component: {fileID: 6328620556910681696}
   - component: {fileID: -7666787661781085925}
+  - component: {fileID: 2478519138357863836}
+  - component: {fileID: -990354929080661686}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_1
   m_TagString: Untagged
@@ -63,7 +65,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2244286065462831405}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: -0, y: 0, z: -1, w: -0.00017452026}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
@@ -73,7 +75,7 @@ Transform:
   - {fileID: 3683942917623874102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.02}
 --- !u!114 &7748304299631965041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +265,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528bf1fddc76a94a84cad19b3225cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2478519138357863836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0c9f0349cc6af458a0a219e87928a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toRotation: 1
+--- !u!50 &-990354929080661686
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244286065462831405}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8708241557639216067
 GameObject:
   m_ObjectHideFlags: 0

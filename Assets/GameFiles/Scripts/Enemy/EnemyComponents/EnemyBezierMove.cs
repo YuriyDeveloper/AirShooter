@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyBezierMove : MonoBehaviour
@@ -19,7 +20,7 @@ public class EnemyBezierMove : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Bezier.GetFifePoints(_points[0].position, _points[1].position,
+        transform.position = Bezier.GetFivePoints(_points[0].position, _points[1].position,
                     _points[2].position, _points[3].position, _points[4].position, _pathPoint);
     }
 
@@ -35,7 +36,7 @@ public class EnemyBezierMove : MonoBehaviour
         for (int i = 0; i < sigmentsNumber + 1; i++)
         {
             float parameter = (float)i / sigmentsNumber;
-            Vector2 point = Bezier.GetFifePoints(_points[0].position, _points[1].position,
+            Vector2 point = Bezier.GetFivePoints(_points[0].position, _points[1].position,
                _points[2].position, _points[3].position, _points[4].position, parameter);
             Gizmos.DrawLine(preveousePoint, point);
             preveousePoint = point;
