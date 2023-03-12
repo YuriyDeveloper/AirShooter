@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LastingDamageEffect : MonoBehaviour, IDamage
+public class EnemyLastingDamageEffect : MonoBehaviour, IDamage
 {
     [SerializeField] private GameObject _effect;
     [SerializeField] private Transform _spawnPoint;

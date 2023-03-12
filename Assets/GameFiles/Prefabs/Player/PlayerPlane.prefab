@@ -546,6 +546,10 @@ GameObject:
   - component: {fileID: 101498268231741768}
   - component: {fileID: 3517857039064744825}
   - component: {fileID: 4005009483364354554}
+  - component: {fileID: 663244225882980593}
+  - component: {fileID: 6105556521434372228}
+  - component: {fileID: 5040164240059158999}
+  - component: {fileID: -2750203323147006049}
   m_Layer: 0
   m_Name: PlayerPlane
   m_TagString: Untagged
@@ -758,3 +762,55 @@ MonoBehaviour:
   - {fileID: 4512921615849685976}
   - {fileID: 2651506588262674627}
   _spawnInterval: 0.15
+--- !u!114 &663244225882980593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5d630505949ed4ea8be305312c23c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6105556521434372228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763341b3228fccb478ebd086e5b034f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 200
+  _collisionExplosionAnimation: {fileID: 0}
+--- !u!114 &5040164240059158999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7462bec8eb165240864a255b4e2e25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2750203323147006049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a77efb6ccfcd9d40a42f0cd720b52bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPointsTransform: []
+  _collisisonDamage: 200

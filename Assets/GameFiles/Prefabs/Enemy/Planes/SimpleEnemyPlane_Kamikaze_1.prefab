@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 8077848156557652492}
   - component: {fileID: 4551735280095877150}
   - component: {fileID: -2133276168363951050}
-  - component: {fileID: 5277965221552842495}
   - component: {fileID: 4702203006021153561}
   - component: {fileID: 4869900580533918824}
+  - component: {fileID: 4943694748760018250}
+  - component: {fileID: 8991726021679842214}
+  - component: {fileID: -5223768142235584562}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_Kamikaze_1
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5101814508668370849}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _points: []
   _pathPoint: 0
-  _speed: 0
+  _speed: 0.15
 --- !u!114 &4551735280095877150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +130,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0064094514, y: 0.04847207}
@@ -144,18 +146,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39413843, y: 0.123006895}
   m_EdgeRadius: 0
---- !u!114 &5277965221552842495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5101814508668370849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b528bf1fddc76a94a84cad19b3225cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4702203006021153561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0c9f0349cc6af458a0a219e87928a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toRotation: 0
+  _toRotation: 1
 --- !u!114 &4869900580533918824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +174,49 @@ MonoBehaviour:
   _collisionExplosionAnimation: {fileID: 0}
   _health: 50
   _collisisonEffect: {fileID: 0}
+--- !u!50 &4943694748760018250
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101814508668370849}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8991726021679842214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101814508668370849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ded169846e074ab2b30cd487ad147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5223768142235584562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101814508668370849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bd056ad8c3f61499584779ef659be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisisonDamage: 70

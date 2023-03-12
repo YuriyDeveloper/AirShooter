@@ -7,7 +7,7 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
     [SerializeField] private float _health;
     [SerializeField] private SpriteRenderer _collisisonEffect;
 
-    private LastingDamageEffect _lastingDamageEffect;
+    private EnemyLastingDamageEffect _lastingDamageEffect;
 
     private bool _canInstantiateLastingDamageEffect;
     public float Health { get => _health; set => _health = value; }
@@ -15,7 +15,7 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
     private void OnEnable()
     {
         _canInstantiateLastingDamageEffect = true;
-        _lastingDamageEffect = GetComponent<LastingDamageEffect>();
+        _lastingDamageEffect = GetComponent<EnemyLastingDamageEffect>();
     }
 
     private void Update()
