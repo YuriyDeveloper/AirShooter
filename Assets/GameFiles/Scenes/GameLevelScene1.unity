@@ -966,11 +966,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 538881798585484628, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.05
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 538881798585484628, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.67
+      value: -10.49
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270331351890, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_RootOrder
@@ -1022,11 +1022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270331351891, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270468565027, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.31
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270468565027, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1034,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270520958229, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.47
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7891124270520958229, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1042,19 +1042,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891124271186209697, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7891124271186209697, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.56
+      value: 12.05
       objectReference: {fileID: 0}
     - target: {fileID: 7891124271763010989, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.23
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 7891124271763010989, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.66
+      value: -4.82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e635c055e99059e48b61aa48ae761caf, type: 3}
@@ -1307,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[0].spawnTime
@@ -1330,6 +1330,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
+      propertyPath: _groupEnemyLaunch.Array.data[1]._firstSpawnTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[0]._bezierMove.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1343,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[0]._bezierMove.Array.data[0]
@@ -1408,19 +1412,23 @@ PrefabInstance:
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 2244286065462831405, guid: 1f66a6fd7b72a434ca656ccb43ff2173, type: 3}
+      objectReference: {fileID: 5101814508668370849, guid: a3c4fdd9a71e7d24e8739a7286659b15, type: 3}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 2244286065462831405, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
+      objectReference: {fileID: 5101814508668370849, guid: a3c4fdd9a71e7d24e8739a7286659b15, type: 3}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 2244286065462831405, guid: 1f66a6fd7b72a434ca656ccb43ff2173, type: 3}
+      objectReference: {fileID: 5101814508668370849, guid: a3c4fdd9a71e7d24e8739a7286659b15, type: 3}
     - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 2244286065462831405, guid: ac3da26351c9d564794b949f60bf66e2, type: 3}
+      objectReference: {fileID: 5101814508668370849, guid: a3c4fdd9a71e7d24e8739a7286659b15, type: 3}
+    - target: {fileID: 715270028847872371, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
+      propertyPath: _groupEnemyLaunch.Array.data[1].enemyPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 5101814508668370849, guid: a3c4fdd9a71e7d24e8739a7286659b15, type: 3}
     - target: {fileID: 4428655412989837635, guid: 0f9d4eaac1a818f4fa8142847d9cff3d, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -1,6 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
+
+public enum BulletType
+{
+    enemy,
+    mainPlayer
+}
+
 public class Bullet : MonoBehaviour, IBullet
 {
     [SerializeField] private int _lifeTime;
@@ -10,16 +17,18 @@ public class Bullet : MonoBehaviour, IBullet
     [SerializeField] private SpriteRenderer _collissionEffect;
     [SerializeField] private GameObject _tileEffect;
 
+    [SerializeField] private BulletType _bulletType;
+
      private float _timer;
 
     private int _XDirection;
 
-    public float Damage { get => _damage; set => throw new System.NotImplementedException(); }
+    //public float Damage { get => _damage; set => throw new System.NotImplementedException(); }
 
     private void OnEnable()
     {
         _timer = 0;
-        
+        if (_tileEffect) { _tileEffect.SetActive(false); }
         StartCoroutine(ActivationTile());
         StopCoroutine(ActivationTile());
     }
@@ -39,12 +48,21 @@ public class Bullet : MonoBehaviour, IBullet
     
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Damage(collider);
         Destroy(); 
+    }
+
+    private void Damage(Collider2D collider)
+    {
+        if (_bulletType == BulletType.enemy && collider.gameObject.TryGetComponent<MainPlayerState>(out MainPlayerState mainPlayerState))
+            mainPlayerState.Health -= _damage;
+        else if(_bulletType == BulletType.mainPlayer && collider.gameObject.TryGetComponent<EnemyState>(out EnemyState enemyState))
+            enemyState.Health -= _damage;
     }
 
     private void Destroy()
     {
-        if (_tileEffect) { _tileEffect.SetActive(false); }
+        
         gameObject.SetActive(false);
     }
 
@@ -57,6 +75,7 @@ public class Bullet : MonoBehaviour, IBullet
     {
         if (_timer > _lifeTime)
         {
+            if (_tileEffect) { _tileEffect.SetActive(false); }
             gameObject.SetActive(false);
         }
     }

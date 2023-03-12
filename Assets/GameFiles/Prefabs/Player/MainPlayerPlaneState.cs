@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainPlayerPlaneState : MonoBehaviour, IPlaneState
+public class MainPlayerState : MonoBehaviour, IPlaneState
 {
     [SerializeField] private float _health;
     [SerializeField] GameObject _collisionExplosionAnimation;

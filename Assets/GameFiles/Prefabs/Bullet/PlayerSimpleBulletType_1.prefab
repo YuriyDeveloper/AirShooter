@@ -187,9 +187,10 @@ MonoBehaviour:
   _lifeTime: 2
   _YDirection: 1
   _speed: 25
-  _damage: 3
+  _damage: 5
   _collissionEffect: {fileID: 0}
   _tileEffect: {fileID: 7353065916730399502}
+  _bulletType: 1
 --- !u!50 &5802577895720678742
 Rigidbody2D:
   serializedVersion: 4

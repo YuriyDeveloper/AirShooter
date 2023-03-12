@@ -747,10 +747,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletContainer:
+  - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
   - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
   - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
   _spawnPoints:
   - {fileID: 6772257632518721464}
   - {fileID: 3614006259903991816}

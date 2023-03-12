@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyPlaneState : MonoBehaviour, IPlaneState
+public class EnemyState : MonoBehaviour, IPlaneState
 {
     [SerializeField] GameObject _collisionExplosionAnimation;
     [SerializeField] private float _health;

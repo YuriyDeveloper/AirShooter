@@ -11,9 +11,9 @@ public class MainPlayerPlaneCollisionDamage : MonoBehaviour
 
     private void Damage(Collider2D collisison)
     {
-        if (collisison.gameObject.GetComponent<EnemyPlaneState>())
+        if (collisison.gameObject.GetComponent<EnemyState>())
         {
-            collisison.GetComponent<EnemyPlaneState>().Health -= GetComponent<MainPlayerPlaneData>().CollisionDamage;
+            collisison.GetComponent<EnemyState>().Health -= GetComponent<MainPlayerPlaneData>().CollisionDamage;
         }
     }
 }
