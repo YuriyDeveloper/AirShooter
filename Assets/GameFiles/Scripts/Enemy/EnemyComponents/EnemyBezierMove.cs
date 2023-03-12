@@ -31,6 +31,7 @@ public class EnemyBezierMove : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+
         int sigmentsNumber = 20;
         Vector2 preveousePoint = _points[0].position;
         for (int i = 0; i < sigmentsNumber + 1; i++)
