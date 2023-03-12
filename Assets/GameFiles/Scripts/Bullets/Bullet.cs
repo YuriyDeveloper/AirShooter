@@ -49,15 +49,20 @@ public class Bullet : MonoBehaviour, IBullet
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Damage(collider);
-        Destroy(); 
     }
 
     private void Damage(Collider2D collider)
     {
         if (_bulletType == BulletType.enemy && collider.gameObject.TryGetComponent<MainPlayerState>(out MainPlayerState mainPlayerState))
+        {
             mainPlayerState.Health -= _damage;
-        else if(_bulletType == BulletType.mainPlayer && collider.gameObject.TryGetComponent<EnemyState>(out EnemyState enemyState))
+            Destroy(); 
+        }
+        else if (_bulletType == BulletType.mainPlayer && collider.gameObject.TryGetComponent<EnemyState>(out EnemyState enemyState))
+        {
             enemyState.Health -= _damage;
+            Destroy();
+        }
     }
 
     private void Destroy()
@@ -68,7 +73,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Flying()
     {
-        transform.position += new Vector3(0, _speed * Time.deltaTime);
+        transform.position += new Vector3(0, _YDirection * _speed * Time.deltaTime);
     }
 
     private void SelfDestruction()
