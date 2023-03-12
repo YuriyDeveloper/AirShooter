@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1676377867494425950}
   - component: {fileID: 3815487378549399190}
   m_Layer: 0
-  m_Name: BulletLauncherType_SimpleFourLaunch
+  m_Name: BulletLauncherMode_SimpleFourLaunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09b28e3b99a0e842b47bcb8d31e08c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullets:
-  - _bulletPrefab: {fileID: 4725867012616575386, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  - _bulletPrefab: {fileID: 4725867012616575386, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
+  _spawnPointBulletRatio:
+  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}

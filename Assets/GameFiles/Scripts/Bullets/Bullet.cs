@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IBullet
@@ -7,6 +8,7 @@ public class Bullet : MonoBehaviour, IBullet
     [SerializeField] private int _speed;
     [SerializeField] private int _damage;
     [SerializeField] private SpriteRenderer _collissionEffect;
+    [SerializeField] private GameObject _tileEffect;
 
      private float _timer;
 
@@ -17,6 +19,15 @@ public class Bullet : MonoBehaviour, IBullet
     private void OnEnable()
     {
         _timer = 0;
+        
+        StartCoroutine(ActivationTile());
+        StopCoroutine(ActivationTile());
+    }
+
+    private IEnumerator ActivationTile()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (_tileEffect) { _tileEffect.SetActive(true); }
     }
 
     private void FixedUpdate()
@@ -33,6 +44,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Destroy()
     {
+        if (_tileEffect) { _tileEffect.SetActive(false); }
         gameObject.SetActive(false);
     }
 
