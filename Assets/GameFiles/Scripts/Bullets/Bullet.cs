@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     [SerializeField] private BulletType _bulletType;
 
-     private float _timer;
+    private float _timer;
 
     private int _XDirection;
 
@@ -73,7 +73,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Flying()
     {
-        transform.position += new Vector3(0, _YDirection * _speed * Time.deltaTime);
+        transform.position += new Vector3(_XDirection, _YDirection * _speed * Time.deltaTime);
     }
 
     private void SelfDestruction()

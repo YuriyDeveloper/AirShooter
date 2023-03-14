@@ -9,7 +9,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private List<SpriteRenderer> _firePoints;
 
-    [SerializeField] private float _spawnInterval;
+    
     private IBulletFactory _bulletFactory;
 
     private Pool<Bullet> _pool_1;
@@ -59,7 +59,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
                 IBullet bullet = _poolList[index].GetFreeElement(point.position);
                 index++;
             }
-            yield return new WaitForSeconds(_spawnInterval);
+            yield return new WaitForSeconds(_bulletContainer.SpawnInterval);
         }
     }
 
@@ -72,7 +72,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
                 sprite.enabled = sprite.enabled ? false : true;
             }
 
-             yield return new WaitForSeconds(_spawnInterval / 2);
+             yield return new WaitForSeconds(_bulletContainer.SpawnInterval / 2);
         }
     }
 }
