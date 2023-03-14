@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MainPlayerBulletLauncher : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _bulletContainer;
+    [SerializeField] private BulletContainer _bulletContainer;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private List<SpriteRenderer> _firePoints;
 
@@ -27,13 +27,13 @@ public class MainPlayerBulletLauncher : MonoBehaviour
 
     public void StartLaunch()
     {
-        _pool_1 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer[0], true), 10);
+        _pool_1 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[0], true), 10);
         _pool_1.autoExpand = true;
-        _pool_2 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer[1], true), 10);
+        _pool_2 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[1], true), 10);
         _pool_2.autoExpand = true;
-        _pool_3 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer[2], true), 10);
+        _pool_3 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[2], true), 10);
         _pool_3.autoExpand = true;
-        _pool_4 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer[3], true), 10);
+        _pool_4 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[3], true), 10);
         _pool_4.autoExpand = true;
 
         _poolList = new List<Pool<Bullet>>();

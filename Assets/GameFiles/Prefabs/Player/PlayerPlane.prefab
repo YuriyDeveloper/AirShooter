@@ -547,9 +547,9 @@ GameObject:
   - component: {fileID: 3517857039064744825}
   - component: {fileID: 4005009483364354554}
   - component: {fileID: 663244225882980593}
-  - component: {fileID: 6105556521434372228}
   - component: {fileID: 5040164240059158999}
   - component: {fileID: -2750203323147006049}
+  - component: {fileID: 4113648431924106086}
   m_Layer: 0
   m_Name: PlayerPlane
   m_TagString: Untagged
@@ -746,11 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e6b8fadd9a54640b349e35d987da43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletContainer:
-  - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
-  - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
+  _bulletContainer: {fileID: 8563256934356397292, guid: df0cf57e1424ef84ea4af91e88107edd, type: 3}
   _spawnPoints:
   - {fileID: 6772257632518721464}
   - {fileID: 3614006259903991816}
@@ -774,20 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5d630505949ed4ea8be305312c23c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6105556521434372228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918384500739287896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 763341b3228fccb478ebd086e5b034f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 200
-  _collisionExplosionAnimation: {fileID: 0}
 --- !u!114 &5040164240059158999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,3 +796,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPointsTransform: []
   _collisisonDamage: 200
+--- !u!114 &4113648431924106086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918384500739287896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dd4521f57278949a29749873f72b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionExplosionAnimation: {fileID: 0}
+  _health: 200
+  _collisisonEffect: {fileID: 0}
