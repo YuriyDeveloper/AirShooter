@@ -808,5 +808,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionExplosionAnimation: {fileID: 0}
-  _health: 200
+  _health: 100
   _collisisonEffect: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
     private EnemyLastingDamageEffect _lastingDamageEffect;
 
     private bool _canInstantiateLastingDamageEffect;
-    public float Health { get => _health; set => _health = value; }
+
+    public static Action<float> OnMainPlayerPlaneDamage;
 
     private void OnEnable()
     {
@@ -25,6 +27,7 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("TRIGGERENTER");
         StartCoroutine(PlayCollisionEffect(collider));
         StopCoroutine(PlayCollisionEffect(collider));
     }
@@ -64,7 +67,9 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
         }
     }
 
-
-
-
+    public void DecreaseHealth(float damageValue)
+    {
+        _health -= damageValue;
+        OnMainPlayerPlaneDamage?.Invoke(damageValue);
+    }
 }

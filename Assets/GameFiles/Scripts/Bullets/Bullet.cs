@@ -56,9 +56,9 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Damage(Collider2D collider)
     {
-        if (_bulletType == BulletType.enemy && collider.gameObject.TryGetComponent<MainPlayerState>(out MainPlayerState mainPlayerState))
+        if (_bulletType == BulletType.enemy && collider.gameObject.TryGetComponent<PlayerPlaneState>(out PlayerPlaneState mainPlayerState))
         {
-            mainPlayerState.Health -= _damage;
+            mainPlayerState.DecreaseHealth(_damage);
             Destroy(); 
         }
         else if (_bulletType == BulletType.mainPlayer && collider.gameObject.TryGetComponent<EnemyState>(out EnemyState enemyState))

@@ -53,11 +53,6 @@ public class EnemyState : MonoBehaviour, IPlaneState
         }
     }
 
-    private void BulletTakeDamage()
-    {
-
-    }
-
 
     private void Destroy()
     {
@@ -73,7 +68,8 @@ public class EnemyState : MonoBehaviour, IPlaneState
         }
     }
 
-
-
-
+    public void DecreaseHealth(float damageValue)
+    {
+        throw new System.NotImplementedException();
+    }
 }
