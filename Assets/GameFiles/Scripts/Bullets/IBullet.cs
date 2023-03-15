@@ -1,6 +1,7 @@
 
 public interface IBullet
 {
-   // public float Damage { get; set; }
-    public void SetXDirection(int direction);
+     public float XDirection { get; set; }
+  //   public int YDirection { get; set; }
+  //  public void SetXDirection(int direction);
 }

@@ -20,7 +20,6 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
 
     private void Update()
     {
-        Debug.Log("enemy health is " + _health);
         Destroy();
     }
 

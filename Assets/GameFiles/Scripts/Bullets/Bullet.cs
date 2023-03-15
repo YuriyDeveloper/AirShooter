@@ -11,7 +11,7 @@ public enum BulletType
 public class Bullet : MonoBehaviour, IBullet
 {
     [SerializeField] private int _lifeTime;
-    [SerializeField] private int _YDirection;
+    [SerializeField] private int _yDirection;
     [SerializeField] private int _speed;
     [SerializeField] private int _damage;
     [SerializeField] private SpriteRenderer _collissionEffect;
@@ -21,7 +21,10 @@ public class Bullet : MonoBehaviour, IBullet
 
     private float _timer;
 
-    private int _XDirection;
+    private float _xDirection;
+
+    //public int YDirection { get => _yDirection; set => _yDirection = value; }
+    public float XDirection { get => _xDirection; set => _xDirection = value; }
 
     //public float Damage { get => _damage; set => throw new System.NotImplementedException(); }
 
@@ -73,7 +76,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void Flying()
     {
-        transform.position += new Vector3(_XDirection, _YDirection * _speed * Time.deltaTime);
+        transform.position += new Vector3(_xDirection, _yDirection * _speed * Time.deltaTime);
     }
 
     private void SelfDestruction()
@@ -85,9 +88,5 @@ public class Bullet : MonoBehaviour, IBullet
         }
     }
 
-    public void SetXDirection(int direction)
-    {
-        _XDirection = direction;
-    }
 
 }

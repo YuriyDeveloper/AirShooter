@@ -57,6 +57,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour
             foreach (Transform point in _spawnPoints)
             {
                 IBullet bullet = _poolList[index].GetFreeElement(point.position);
+                bullet.XDirection = _bulletContainer.XDirectionAngle[index];
                 index++;
             }
             yield return new WaitForSeconds(_bulletContainer.SpawnInterval);

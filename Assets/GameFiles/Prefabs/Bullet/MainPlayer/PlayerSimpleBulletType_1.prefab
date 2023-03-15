@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 2
-  _YDirection: 1
+  _yDirection: 1
   _speed: 25
   _damage: 5
   _collissionEffect: {fileID: 0}
