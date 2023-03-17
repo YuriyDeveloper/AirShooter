@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toRotation: 1
+  _rotationValue: 90
 --- !u!114 &4869900580533918824
 MonoBehaviour:
   m_ObjectHideFlags: 0
