@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainPlayerBulletLauncher : MonoBehaviour
+public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
 {
     [SerializeField] private BulletContainer _bulletContainer;
     [SerializeField] private List<Transform> _spawnPoints;
@@ -56,8 +56,9 @@ public class MainPlayerBulletLauncher : MonoBehaviour
             int index = 0;
             foreach (Transform point in _spawnPoints)
             {
-                IBullet bullet = _poolList[index].GetFreeElement(point.position);
-                bullet.XDirection = _bulletContainer.XDirectionAngle[index];
+                Bullet bullet = _poolList[index].GetFreeElement(point.position);
+                IBullet ibullet = bullet as IBullet;
+                ibullet.XDirection = _bulletContainer.XDirectionAngle[index];
                 index++;
             }
             yield return new WaitForSeconds(_bulletContainer.SpawnInterval);

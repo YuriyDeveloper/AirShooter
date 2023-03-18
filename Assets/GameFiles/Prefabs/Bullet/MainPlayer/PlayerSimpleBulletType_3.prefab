@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4534961727521467719}
   - component: {fileID: 7600506716037897670}
-  - component: {fileID: 4725867012616575386}
   - component: {fileID: 1842426895800683486}
   - component: {fileID: 4551877436804466285}
+  - component: {fileID: 8323844140943630712}
   m_Layer: 0
   m_Name: PlayerSimpleBulletType_3
   m_TagString: PlayerSimpleBullet
@@ -172,25 +172,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4725867012616575386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886151167919089769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c20312fb7642445b76dfa40156e8c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lifeTime: 2
-  _yDirection: 1
-  _speed: 20
-  _damage: 3
-  _collissionEffect: {fileID: 0}
-  _tileEffect: {fileID: 6136199497257196815}
-  _bulletType: 1
 --- !u!58 &1842426895800683486
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -228,3 +209,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8323844140943630712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886151167919089769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec746420da1c08b42b5731dcffa5879c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime: 2
+  _yDirection: 1
+  _speed: 2
+  _damage: 10
+  _collissionEffect: {fileID: 0}
+  _tileEffect: {fileID: 0}
+  _bulletType: 1

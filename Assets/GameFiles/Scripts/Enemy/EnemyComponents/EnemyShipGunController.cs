@@ -10,6 +10,8 @@ public class EnemyShipGunController : MonoBehaviour
     [SerializeField] private float _viewRadius = 11;
     [SerializeField] private LayerMask _layerMask;
 
+    private float _shootInterval;
+
     private Collider2D _collision;
 
     private void FixedUpdate()
@@ -22,6 +24,7 @@ public class EnemyShipGunController : MonoBehaviour
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - _rotationModifier;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * _speed);
+           // GetComponent<DefenseBulletLauncher>()
         }
             
         
@@ -40,5 +43,8 @@ public class EnemyShipGunController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _viewRadius);
     }
 
+    private void Shoot()
+    {
 
+    }
 }
