@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1178299359309285410}
   - component: {fileID: 7040245734188037735}
   - component: {fileID: 6931719222163520305}
-  - component: {fileID: 1176246990613953590}
+  - component: {fileID: 8522209576348061232}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ff7ce88922f301d42a8b7277f7e6763a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,26 +101,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _rotationModifier: -90
-  _viewRadius: 11
+  _viewRadius: 15
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!58 &1176246990613953590
-CircleCollider2D:
+--- !u!114 &8522209576348061232
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379592978474158912}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecaa6c659bb0c14ba16549b8b156373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletContainer: {fileID: -1793634809558175501, guid: beea908e97524ab429e1b41158f9349e, type: 3}
+  _spawnPoints:
+  - {fileID: 1124796443897736250}
 --- !u!1 &4305329104917407109
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ad6a30146ac917e40b06b1b44ccb1602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

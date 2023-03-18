@@ -10,31 +10,34 @@ public class EnemyShipGunController : MonoBehaviour
     [SerializeField] private float _viewRadius = 11;
     [SerializeField] private LayerMask _layerMask;
 
-    private float _shootInterval;
+    private Collider2D _mainPlayerCollider;
 
-    private Collider2D _collision;
+    public Collider2D MainPlayerCollider { get => _mainPlayerCollider; }
+
+    private void Start()
+    {
+        Shoot();
+
+    }
 
     private void FixedUpdate()
     {
-        ChekingMainPlayer();
+       // ChekingMainPlayer();
 
-        if (_collision)
-        { 
-            Vector3 vectorToTarget = _collision.gameObject.transform.position - transform.position;
+        //if (_mainPlayerCollider)
+        //{ 
+          //  Vector3 vectorToTarget = _mainPlayerCollider.gameObject.transform.position - transform.position;
+            Vector3 vectorToTarget = FindObjectOfType<MainPlayer>().gameObject.transform.position - transform.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - _rotationModifier;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * _speed);
-           // GetComponent<DefenseBulletLauncher>()
-        }
-            
-        
+       // }
     }
-
 
     private void ChekingMainPlayer()
     {
-        _collision = Physics2D.OverlapCircle(transform.position, _viewRadius, _layerMask);
-       
+        _mainPlayerCollider = Physics2D.OverlapCircle(transform.position, _viewRadius, _layerMask);
+        
     }
 
     private void OnDrawGizmos()
@@ -45,6 +48,6 @@ public class EnemyShipGunController : MonoBehaviour
 
     private void Shoot()
     {
-
+        GetComponent<DefenseBulletLauncher>().StartLaunch();
     }
 }
