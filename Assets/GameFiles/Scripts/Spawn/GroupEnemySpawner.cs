@@ -7,7 +7,7 @@ using UnityEngine;
 public class GroupEnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<GroupEnemyLaunch> _groupEnemyLaunch = new List<GroupEnemyLaunch>();
-    [SerializeField] private int _intervalBetweenSpawnTime;
+    [SerializeField] private float _intervalBetweenSpawnTime;
 
     private IEnemyFactory _enemyFactory;
 
