@@ -46,12 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container:
   - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
-  - {fileID: 7886151167919089769, guid: 7576d80b3cab2244cba09f50441270b5, type: 3}
-  - {fileID: 7886151167919089769, guid: 7576d80b3cab2244cba09f50441270b5, type: 3}
+  - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
+  - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
   - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
   _xDirectionAngle:
-  - -0.2
-  - -0.1
-  - 0.1
-  - 0.2
-  _spawnInterval: 0.1
+  - 0
+  - 0
+  - 0
+  - 0
+  _spawnInterval: 0.2

@@ -25,7 +25,7 @@ public class SingleEnemySpawner : MonoBehaviour
         for (int index = 0; index < _enemyLaunch.Count; index++)
         {
              yield return new WaitForSeconds(_enemyLaunch[index].spawnTime);
-             _enemyFactory.CreateEnemy(_enemyLaunch[index].enemyPrefab, _enemyLaunch[index]._bezierMove[0], _enemyLaunch[index]._bezierMove);
+             _enemyFactory.CreateEnemy(_enemyLaunch[index].enemyPrefab, _enemyLaunch[index]._bezierMove.transform.GetChild(0), _enemyLaunch[index]._bezierMove);
         }
     }
 }
@@ -35,5 +35,5 @@ public class SingleEnemyLaunch
 {
     public GameObject enemyPrefab;
     public int spawnTime;
-    public List<Transform> _bezierMove;
+    public GameObject _bezierMove;
 }

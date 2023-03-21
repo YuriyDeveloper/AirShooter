@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _points: []
   _pathPoint: 0
-  _speed: 0.15
+  _speed: 0.25
 --- !u!114 &4551735280095877150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcb2fced4e12244988b81253fc4be73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destructionIf: 0
+  _destructionIf: 1
 --- !u!61 &-2133276168363951050
 BoxCollider2D:
   m_ObjectHideFlags: 0

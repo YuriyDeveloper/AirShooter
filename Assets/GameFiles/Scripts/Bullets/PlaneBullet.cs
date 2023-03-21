@@ -14,7 +14,6 @@ public class PlaneBullet : Bullet, IBullet
     [SerializeField] private int _yDirection;
     [SerializeField] private int _speed;
     [SerializeField] private int _damage;
-    [SerializeField] private SpriteRenderer _collissionEffect;
     [SerializeField] private GameObject _tileEffect;
 
     [SerializeField] private BulletType _bulletType;

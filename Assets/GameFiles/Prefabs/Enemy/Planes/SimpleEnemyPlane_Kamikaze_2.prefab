@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _points: []
   _pathPoint: 0
-  _speed: 0.15
+  _speed: 0.25
 --- !u!114 &4551735280095877150
 MonoBehaviour:
   m_ObjectHideFlags: 0

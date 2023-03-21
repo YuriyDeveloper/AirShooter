@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 67717633777116930}
   - component: {fileID: -8154623684301144200}
   - component: {fileID: 2797471006497306361}
+  - component: {fileID: 8244541310679393736}
   m_Layer: 0
   m_Name: EnemySimpleShip
   m_TagString: Untagged
@@ -346,5 +347,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0c9f0349cc6af458a0a219e87928a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toRotation: 1
+  _toRotation: 0
   _rotationValue: -90
+--- !u!114 &8244541310679393736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061420718753715352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667c31be62af1224eb5229fede3f0667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionExplosionAnimation: {fileID: 0}
+  _health: 300
+  _collisisonEffect: {fileID: 0}
