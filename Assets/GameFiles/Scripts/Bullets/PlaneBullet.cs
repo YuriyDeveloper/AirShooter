@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 
@@ -15,24 +16,30 @@ public class PlaneBullet : Bullet, IBullet
     [SerializeField] private int _speed;
     [SerializeField] private int _damage;
     [SerializeField] private GameObject _tileEffect;
-
     [SerializeField] private BulletType _bulletType;
+
+    private float _xRotation;
 
     private float _timer;
 
     private float _xDirection;
 
-    //public int YDirection { get => _yDirection; set => _yDirection = value; }
     public float XDirection { get => _xDirection; set => _xDirection = value; }
-
-    //public float Damage { get => _damage; set => throw new System.NotImplementedException(); }
+    public float XRotation { get => _xRotation; set => _xRotation = value; }
 
     private void OnEnable()
     {
+        Debug.Log("RotationANgle" + _xRotation);
+        transform.rotation = Quaternion.Euler(0, 0, _xRotation);
         _timer = 0;
         if (_tileEffect) { _tileEffect.SetActive(false); }
         StartCoroutine(ActivationTile());
         StopCoroutine(ActivationTile());
+    }
+
+    private void Start()
+    {
+        
     }
 
     private IEnumerator ActivationTile()

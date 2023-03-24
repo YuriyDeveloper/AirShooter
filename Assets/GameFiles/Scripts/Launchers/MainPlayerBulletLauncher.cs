@@ -27,13 +27,13 @@ public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
 
     public void StartLaunch()
     {
-        _pool_1 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[0], true), 10);
+        _pool_1 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[0], true), 0);
         _pool_1.autoExpand = true;
-        _pool_2 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[1], true), 10);
+        _pool_2 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[1], true), 0);
         _pool_2.autoExpand = true;
-        _pool_3 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[2], true), 10);
+        _pool_3 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[2], true), 0);
         _pool_3.autoExpand = true;
-        _pool_4 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[3], true), 10);
+        _pool_4 = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[3], true), 0);
         _pool_4.autoExpand = true;
 
         _poolList = new List<Pool<Bullet>>();
@@ -59,7 +59,9 @@ public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
                 Bullet bullet = _poolList[index].GetFreeElement(point.position);
                 IBullet ibullet = bullet as IBullet;
                 ibullet.XDirection = _bulletContainer.XDirectionAngle[index];
+                ibullet.XRotation = _bulletContainer.XRotationAngle[index];
                 index++;
+               
             }
             yield return new WaitForSeconds(_bulletContainer.SpawnInterval);
         }

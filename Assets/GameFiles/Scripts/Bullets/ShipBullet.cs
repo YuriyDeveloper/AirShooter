@@ -13,8 +13,8 @@ public class ShipBullet : Bullet, IBullet, IShipBullet
 
     public float XDirection { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public Collider2D MainPlayerCollider { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public float XRotation { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-   
     public void FlyToMainPlayer()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
