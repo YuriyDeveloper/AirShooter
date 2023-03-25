@@ -63,7 +63,10 @@ public class EnemyState : MonoBehaviour, IPlaneState
             {
                 GameObject destroyEffect = Instantiate(_collisionExplosionAnimation, transform.position, Quaternion.identity, null);
             }
-           
+            if (TryGetComponent<EnemyActionAfterDead>(out EnemyActionAfterDead component))
+            {
+                component.SpawnCoin();
+            }
             Destroy(gameObject);
         }
     }

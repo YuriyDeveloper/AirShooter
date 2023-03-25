@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4943694748760018250}
   - component: {fileID: 8991726021679842214}
   - component: {fileID: -5223768142235584562}
+  - component: {fileID: 2199077696659269122}
   m_Layer: 0
   m_Name: SimpleEnemyPlane_Kamikaze_1
   m_TagString: Untagged
@@ -221,3 +222,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collisisonDamage: 7
+--- !u!114 &2199077696659269122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101814508668370849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd268572d4c91e5428ab4aa5d24dd894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameCoin: {fileID: 5778897380813472483, guid: d4e67bfc391af284295639bd272c5c69, type: 3}

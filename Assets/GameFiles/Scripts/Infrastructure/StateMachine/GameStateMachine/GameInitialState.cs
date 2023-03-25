@@ -24,7 +24,9 @@ public class GameInitialState : IState
         _services.RegisterSingle<IBulletFactory>(new BulletFactory());
         _services.RegisterSingle<IEnemyFactory>(new EnemyFactory());
         _services.RegisterSingle<IUIFactory>(new UIFactory());
+        _services.RegisterSingle<IGiftFactory>(new GiftFactory());
         _services.RegisterSingle<IAssetProvider>(new AssetProvider());
+        Debug.Log("Services are registered");
     }
 
     public void Exit()

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CoinAnimation
+  m_Name: GameCoinAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,19 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 3df1e489842ee4343a542b5dd925405b, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: 5b42434d6189383488848b087aabdd54, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: b884f5c25430bcd43bb62a7b992a0e0c, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: 577d79a1fed4f3c4ea72a0bcd3f30163, type: 3}
+      value: {fileID: 21300000, guid: 5b42434d6189383488848b087aabdd54, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 02ddf8d7c1c42974b9d4b6de19df4585, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: 2239750c897a45047913f4e431ac5787, type: 3}
+      value: {fileID: 21300000, guid: b884f5c25430bcd43bb62a7b992a0e0c, type: 3}
     - time: 0.5
+      value: {fileID: 21300000, guid: 577d79a1fed4f3c4ea72a0bcd3f30163, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: 02ddf8d7c1c42974b9d4b6de19df4585, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 2239750c897a45047913f4e431ac5787, type: 3}
+    - time: 1
       value: {fileID: 21300000, guid: b04ce77d2c0654040881b13f7e52558a, type: 3}
-    - time: 0.5833333
+    - time: 1.1666666
       value: {fileID: 21300000, guid: 6b7623a642fe1014083da4f5d8135f99, type: 3}
     attribute: m_Sprite
     path: 
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.59999996
+    m_StopTime: 1.1833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
