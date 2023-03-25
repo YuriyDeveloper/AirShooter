@@ -15,6 +15,7 @@ public class MainPlayerBulletButtonsController : MonoBehaviour
     {
         Debug.Log("ContainerINdex " + containerIndex);
         _mainPlayerBulletLauncher.BulletContainer = _mainPlayerBulletContainers[containerIndex - 1];
+        _mainPlayerBulletLauncher.StartLaunch();
     }
 
 

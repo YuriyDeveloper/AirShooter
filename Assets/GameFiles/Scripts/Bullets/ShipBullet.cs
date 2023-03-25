@@ -8,12 +8,13 @@ public class ShipBullet : Bullet, IBullet, IShipBullet
     [SerializeField] private float _damage;
 
     private Rigidbody2D _rigidbody;
-
     private GameObject _mainPlayer;
+
+    private float _xRotation;
 
     public float XDirection { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public Collider2D MainPlayerCollider { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public float XRotation { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public float XRotation { get => throw new System.NotImplementedException(); set => _xRotation = value; }
     public bool CanFly { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public void FlyToMainPlayer()
