@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
@@ -10,6 +8,7 @@ public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private List<SpriteRenderer> _firePoints;
 
+    public BulletContainer BulletContainer { set => _bulletContainer = value; }
     
     private IBulletFactory _bulletFactory;
 

@@ -137,12 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec746420da1c08b42b5731dcffa5879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeTime: 0
-  _yDirection: 0
-  _speed: 0
-  _damage: 0
+  _lifeTime: 2
+  _yDirection: 1
+  _speed: 15
+  _damage: 10
   _tileEffect: {fileID: 0}
-  _bulletType: 0
+  _bulletType: 1
 --- !u!1 &9138856597692959092
 GameObject:
   m_ObjectHideFlags: 0

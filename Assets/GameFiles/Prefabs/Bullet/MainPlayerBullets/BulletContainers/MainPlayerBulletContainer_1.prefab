@@ -45,7 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container:
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: 7576d80b3cab2244cba09f50441270b5, type: 3}
   - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
   - {fileID: 7886151167919089769, guid: 5857c890d2169f5448ebc5fd58a37f7d, type: 3}
-  - {fileID: 7886151167919089769, guid: d66a50f531fc6c242b9a5ebe009749f8, type: 3}
+  - {fileID: 7886151167919089769, guid: 7576d80b3cab2244cba09f50441270b5, type: 3}
+  _xDirectionAngle:
+  - 0
+  - 0
+  - 0
+  - 0
+  _xRotationAngle:
+  - 0
+  - 0
+  - 0
+  - 0
+  _spawnInterval: 0.2

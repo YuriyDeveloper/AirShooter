@@ -27,7 +27,6 @@ public class PlayerPlaneState : MonoBehaviour, IPlaneState
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("TRIGGERENTER");
         StartCoroutine(PlayCollisionEffect(collider));
         StopCoroutine(PlayCollisionEffect(collider));
     }

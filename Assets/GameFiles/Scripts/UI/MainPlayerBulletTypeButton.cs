@@ -3,22 +3,12 @@ using UnityEngine;
 
 public class MainPlayerBulletTypeButton : MonoBehaviour
 {
-    public static Action OnOneType;
-    public static Action OnTwoType;
-    public static Action OnThreeType;
+    [SerializeField] private int _bulletContainerIndex;
 
-    public void ChoiseTypeOne()
-    {
-        OnOneType?.Invoke();
-    }
+    public static Action<int> OnActivationBUlletContainer;
 
-    public void ChoiseTypeTwo()
+    public void ActivationButtonContainer()
     {
-        OnTwoType?.Invoke();
-    }
-
-    public void ChoiseTypeThree()
-    {
-        OnThreeType?.Invoke();
+        OnActivationBUlletContainer?.Invoke(_bulletContainerIndex);
     }
 }
