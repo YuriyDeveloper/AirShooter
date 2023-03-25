@@ -16,7 +16,7 @@ public class DefenseBulletLauncher : MonoBehaviour, IBulletLauncher
     public void StartLaunch()
     {
         _bulletFactory = Services.Container.Single<IBulletFactory>();
-        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[0], true), 10);
+        _pool = new Pool<Bullet>(_bulletFactory.CreateBullet(_bulletContainer.Container[0], true, 0), 10);
         _poolList = new List<Pool<Bullet>>();
         _poolList.Add(_pool);
         StartCoroutine(SpawnBullet());
@@ -33,7 +33,6 @@ public class DefenseBulletLauncher : MonoBehaviour, IBulletLauncher
                 Bullet bullet = _poolList[index].GetFreeElement(point.position);
                 IShipBullet shipBullet = bullet as IShipBullet;
                 shipBullet.FlyToMainPlayer();
-
                 index++;
             }
             yield return new WaitForSeconds(_bulletContainer.SpawnInterval);

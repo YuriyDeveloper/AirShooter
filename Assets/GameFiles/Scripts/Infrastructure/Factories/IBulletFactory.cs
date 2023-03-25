@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IBulletFactory : IService
 {
-    public Bullet CreateBullet(GameObject bullet, bool firstBulletDestroy);
+    public Bullet CreateBullet(GameObject bullet, bool firstBulletDestroy, float XRotation);
 }

@@ -50,13 +50,13 @@ MonoBehaviour:
   - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
   - {fileID: 7886151167919089769, guid: 2555fbd3d3e8bd04587ba50c73db76dc, type: 3}
   _xDirectionAngle:
-  - -0.5
+  - -0.2
   - -0.1
   - 0.1
-  - 0.5
+  - 0.2
   _xRotationAngle:
-  - 10
-  - 10
-  - -10
-  - -10
+  - 15
+  - 15
+  - -15
+  - -15
   _spawnInterval: 0.2
