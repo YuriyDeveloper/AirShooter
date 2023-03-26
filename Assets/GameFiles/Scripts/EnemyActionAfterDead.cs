@@ -1,13 +1,15 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class EnemyActionAfterDead : MonoBehaviour
 {
-    [SerializeField] private GameCoin _gameCoin;
+    [SerializeField] private GameGift _gameCoin;
+    private IGiftFactory _giftFactory;
 
-    private Pool<GameCoin> _pool;
+
     public void SpawnCoin()
     {
-        _pool = new Pool<GameCoin>(Instantiate(_gameCoin, transform.position, Quaternion.identity), 0);
-        
+        _giftFactory = Services.Container.Single<IGiftFactory>();
+        _giftFactory.CreateGift(_gameCoin, transform.position);
     }
 }

@@ -9,4 +9,11 @@ public class MainPlayerPlaneData : MonoBehaviour
 
     public float CollisionDamage { get => _collisisonDamage; }
 
+    private float _giftCoinCount;
+
+    public void GetGiftCoin(int count)
+    {
+
+    }
+
 }
