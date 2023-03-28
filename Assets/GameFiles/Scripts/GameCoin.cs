@@ -1,13 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+
 using UnityEngine;
+using Zenject;
 
 public class GameCoin : GameGift
 {
     [SerializeField] private float _moveSpeed;
 
     private IGameData _gameData;
+
+    private UICoinText _uiCoinText;
+
+    [Inject]
+    private void Construct(UICoinText uICoinText)
+    {
+        _uiCoinText = uICoinText;
+    }
 
     private void Update()
     {
@@ -18,9 +25,10 @@ public class GameCoin : GameGift
     {
         if (collision.gameObject.GetComponent<MainPlayer>())
         {
-            //_gameData = Services.Container.Single<IGameData>();
-            //_gameData.IncreaseInt(StatsParameter.STAT_PARAM_COIN_COUNT);
+            _uiCoinText.SetCoinCount();
+
             gameObject.SetActive(false);
         }
     }
+
 }

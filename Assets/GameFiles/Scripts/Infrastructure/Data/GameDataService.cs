@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class GameData : IGameData
+public class GameDataService : IGameData
 {
     private const string STATS_INT = "intStats";
     private const string STATS_FLOAT = "floatStats";
