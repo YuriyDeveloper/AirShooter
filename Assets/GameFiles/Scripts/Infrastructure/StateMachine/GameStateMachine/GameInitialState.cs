@@ -22,7 +22,7 @@ public class GameInitialState : IState
         _services = new Services();
        
         _services.RegisterSingle(_gameStateMachine);
-        _services.RegisterSingle<IGameData>(new GameDataService());
+        _services.RegisterSingle<IGameData>(new GameData());
         _services.RegisterSingle<IBulletFactory>(new BulletFactory());
         _services.RegisterSingle<IEnemyFactory>(new EnemyFactory());
         _services.RegisterSingle<IUIFactory>(new UIFactory());
