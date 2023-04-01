@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class GameInitialState : IState
+public class ProjectInitialState : IState
 {
     private Services _services;
 
     private IGameStateMachine _gameStateMachine;
 
-    public GameInitialState(IGameStateMachine gameStateMachine)
+    public ProjectInitialState(IGameStateMachine gameStateMachine)
     {
         _gameStateMachine = gameStateMachine;
         RegisterServices();

@@ -7,6 +7,6 @@ public class StartGame
     public StartGame()
     {
         _gameStateMachine = new GameStateMachine();
-        _gameStateMachine.Enter<GameInitialState>();
+        _gameStateMachine.Enter<ProjectInitialState>();
     }
 }

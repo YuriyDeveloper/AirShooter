@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
  public enum LauncherType
-    {
-        One,
-        MoreOne
-    }
+ {
+     One,
+     MoreOne
+ }
 public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
 {
     [SerializeField] private LauncherType _launcherType; 
-    
     [SerializeField] private BulletContainer _bulletContainer;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private List<SpriteRenderer> _firePoints;
@@ -91,12 +90,16 @@ public class MainPlayerBulletLauncher : MonoBehaviour, IBullerLauncher
                 int index = 0;
                 foreach (Transform point in _spawnPoints)
                 {
-                    Bullet bullet = _poolList[index].GetFreeElement(point.position);
-                    IBullet ibullet = bullet as IBullet;
-                    ibullet.XDirection = _bulletContainer.XDirectionAngle[index];
-                    index++;
-
+                    if (index < 4)
+                    {
+                        Bullet bullet = _poolList[index].GetFreeElement(point.position);
+                        IBullet ibullet = bullet as IBullet;
+                        ibullet.XDirection = _bulletContainer.XDirectionAngle[index];
+                        index++;
+                    }
+                      
                 }
+               
                 yield return new WaitForSeconds(_bulletContainer.SpawnInterval);
             }
              

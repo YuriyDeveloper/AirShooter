@@ -11,8 +11,10 @@ public class GameStateMachine : IGameStateMachine
     {
         _states = new Dictionary<Type, IExitableState>()
         {
-            [typeof(GameInitialState)] = new GameInitialState(this),
-            [typeof(LoadSceneState)] = new LoadSceneState(this)
+            [typeof(ProjectInitialState)] = new ProjectInitialState(this),
+            [typeof(LoadSceneState)] = new LoadSceneState(this),
+            [typeof(GamePauseState)] = new GamePauseState(this),
+            [typeof(GameLoopState)] = new GameLoopState(this)
         };
     }
 

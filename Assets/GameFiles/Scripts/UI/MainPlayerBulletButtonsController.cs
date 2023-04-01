@@ -13,7 +13,15 @@ public class MainPlayerBulletButtonsController : MonoBehaviour
 
     private void BulletContainerActivated(int containerIndex)
     {
-        Debug.Log("ContainerINdex " + containerIndex);
+        if (containerIndex == 2)
+        {
+             _mainPlayerBulletLauncher.LauncherType = LauncherType.MoreOne;
+        }
+        else
+        {
+            _mainPlayerBulletLauncher.LauncherType = LauncherType.One;
+        }
+      
         _mainPlayerBulletLauncher.BulletContainer = _mainPlayerBulletContainers[containerIndex - 1];
         _mainPlayerBulletLauncher.StartLaunch();
     }
