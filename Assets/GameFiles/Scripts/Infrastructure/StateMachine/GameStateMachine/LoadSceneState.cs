@@ -11,10 +11,19 @@ public class LoadSceneState : IPayloadedState<string>
     public void Enter(string scenePath)
     {
         _sceneLoader.Load(scenePath);
+        if (scenePath.Contains("Level"))
+        {
+            StartGameLoopState();
+        }
     }
 
     public void Exit()
     {
         
+    }
+
+    private void StartGameLoopState()
+    {
+        _gameStateMachine.Enter<GameLoopState>();
     }
 }

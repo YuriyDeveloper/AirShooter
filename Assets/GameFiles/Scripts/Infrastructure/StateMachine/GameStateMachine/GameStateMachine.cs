@@ -1,5 +1,3 @@
-
-using UnityEngine;
 using System;
 using System.Collections.Generic;
 
@@ -13,6 +11,7 @@ public class GameStateMachine : IGameStateMachine
         {
             [typeof(ProjectInitialState)] = new ProjectInitialState(this),
             [typeof(LoadSceneState)] = new LoadSceneState(this),
+            [typeof(MainMenuState)] = new MainMenuState(this),
             [typeof(GamePauseState)] = new GamePauseState(this),
             [typeof(GameLoopState)] = new GameLoopState(this)
         };

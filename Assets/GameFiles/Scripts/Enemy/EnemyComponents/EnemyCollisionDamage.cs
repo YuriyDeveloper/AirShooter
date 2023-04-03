@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCollisionDamage : MonoBehaviour
 {
-    
+    [SerializeField] private int _damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +15,7 @@ public class EnemyCollisionDamage : MonoBehaviour
     {
         if (collisison.gameObject.GetComponent<PlayerPlaneState>())
         {
-            collisison.GetComponent<PlayerPlaneState>().DecreaseHealth(GetComponent<EnemyPlaneData>().CollisionDamage);
+            collisison.GetComponent<PlayerPlaneState>().DecreaseHealth(_damage);
         }
     }
 }

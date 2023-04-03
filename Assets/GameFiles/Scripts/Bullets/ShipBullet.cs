@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipBullet : Bullet, IBullet, IShipBullet
+public class ShipBullet : Bullet//, IBullet, IShipBullet
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
@@ -16,6 +16,8 @@ public class ShipBullet : Bullet, IBullet, IShipBullet
     public Collider2D MainPlayerCollider { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public float XRotation { get => throw new System.NotImplementedException(); set => _xRotation = value; }
     public bool CanFly { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public BulletType Type { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+  //  int Damage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public void FlyToMainPlayer()
     {

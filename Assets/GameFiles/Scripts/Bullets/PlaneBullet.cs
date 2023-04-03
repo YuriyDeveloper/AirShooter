@@ -25,6 +25,8 @@ public class PlaneBullet : Bullet, IBullet
 
     public float XDirection { get => _xDirection; set => _xDirection = value; }
     public float XRotation { get => _xRotation; set => transform.rotation = Quaternion.Euler(0, 0, value); }
+    public int Damage { get => _damage; set => throw new System.NotImplementedException(); }
+    public BulletType Type { get => _bulletType; set => throw new System.NotImplementedException(); }
 
     private void OnEnable()
     {
@@ -46,29 +48,15 @@ public class PlaneBullet : Bullet, IBullet
         Flying();
         SelfDestruction();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Damage(collider);
+        Destroy(collider);
     }
 
-    private void Damage(Collider2D collider)
+    private void Destroy(Collider2D collider)
     {
-        if (_bulletType == BulletType.enemy && collider.gameObject.TryGetComponent<PlayerPlaneState>(out PlayerPlaneState mainPlayerState))
-        {
-            mainPlayerState.DecreaseHealth(_damage);
-            Destroy(); 
-        }
-        else if (_bulletType == BulletType.mainPlayer && collider.gameObject.TryGetComponent<EnemyState>(out EnemyState enemyState))
-        {
-            enemyState.Health -= _damage;
-            Destroy();
-        }
-    }
-
-    private void Destroy()
-    {
-        
+       // if(_bulletType == BulletType.mainPlayer && collider.GetComponent<Enemy>)
         gameObject.SetActive(false);
     }
 

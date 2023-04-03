@@ -10,6 +10,6 @@ public class GameStartLoadingBar : MonoBehaviour
     private void Update()
     {
         _loadingBar.value = SceneLoader.sceneLoadProgress;
-        Debug.Log(SceneLoader.sceneLoadProgress);
+        //Debug.Log(SceneLoader.sceneLoadProgress);
     }
 }
