@@ -56,8 +56,11 @@ public class PlaneBullet : Bullet, IBullet
 
     private void Destroy(Collider2D collider)
     {
-       // if(_bulletType == BulletType.mainPlayer && collider.GetComponent<Enemy>)
-        gameObject.SetActive(false);
+        if (_bulletType == BulletType.mainPlayer && collider.GetComponent<Enemy>())
+        {
+            gameObject.SetActive(false);
+        }
+      
     }
 
     private void Flying()
